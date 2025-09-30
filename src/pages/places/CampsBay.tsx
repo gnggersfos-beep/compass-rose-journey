@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import BookingDialog from "@/components/booking/BookingDialog";
-import campsBayImage from "@/assets/camps-bay.jpg";
+import campsBayImage from "@/assets/campss.jpg";
 import { ArrowLeft, MapPin, Sun, UtensilsCrossed, Camera } from "lucide-react";
 
 const CampsBay = () => {

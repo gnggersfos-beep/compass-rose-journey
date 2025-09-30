@@ -5,7 +5,7 @@ import Hero from "@/components/sections/Hero";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
-import heroImage from "@/assets/hero-table-mountain.jpg";
+import heroGalImage from "@/assets/boa.jpg";
 import campsBayImage from "@/assets/camps-bay.jpg";
 import boKaapImage from "@/assets/bo-kaap.jpg";
 import vaWaterfrontImage from "@/assets/va-waterfront.jpg";
@@ -21,7 +21,7 @@ const Gallery = () => {
 
   const images = [
     {
-      src: heroImage,
+      src: heroGalImage,
       title: "Table Mountain at Sunset",
       category: "Landscapes",
     },
@@ -61,7 +61,7 @@ const Gallery = () => {
       category: "Beaches",
     },
     {
-      src: heroImage,
+      src: heroGalImage,
       title: "Mountain Majesty",
       category: "Landscapes",
     },
@@ -79,7 +79,7 @@ const Gallery = () => {
         title="Photo Gallery"
         subtitle="Visual Journey"
         description="Experience the beauty of Cape Town through our lens - from stunning landscapes to vibrant city scenes"
-        backgroundImage={heroImage}
+        backgroundImage={heroGalImage}
         height="medium"
         showSecondaryButton={false}
         primaryButtonText="Plan Your Visit"

@@ -4,10 +4,10 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import campsBayImage from "@/assets/camps-bay.jpg";
-import boKaapImage from "@/assets/bo-kaap.jpg";
-import vaWaterfrontImage from "@/assets/va-waterfront.jpg";
-import capePointImage from "@/assets/cape-point.jpg";
+import campsBayImage from "@/assets/campss.jpg";
+import boKaapImage from "@/assets/madiba-de-african-inspiration-XrNKe8VLMRo-unsplash.jpg";
+import vaWaterfrontImage from "@/assets/Waterfront.jpg";
+import capePointImage from "@/assets/janan-OoW1DMDCV1Y-unsplash.jpg";
 import winelandsImage from "@/assets/Wines.jpg";
 import heroPlacesImage from "@/assets/places.jpg";
 

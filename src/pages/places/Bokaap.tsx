@@ -5,26 +5,43 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import BookingDialog from "@/components/booking/BookingDialog";
-import campsBayImage from "@/assets/camps-bay.jpg";
-import { ArrowLeft, MapPin, Sun, UtensilsCrossed, Camera } from "lucide-react";
+import boKaapImage from "@/assets/madiba-de-african-inspiration-XrNKe8VLMRo-unsplash.jpg";
+import { ArrowLeft, MapPin, Sun, UtensilsCrossed, Camera, Palette, Landmark, BookOpen } from "lucide-react";
 
 const CampsBay = () => {
   const [showBooking, setShowBooking] = useState(false);
 
-  const highlights = [
-    { icon: <Sun className="w-6 h-6" />, title: "Pristine Beach", description: "Crystal-clear waters and white sand backed by majestic mountains" },
-    { icon: <UtensilsCrossed className="w-6 h-6" />, title: "Dining Scene", description: "World-class restaurants along the vibrant beach promenade" },
-    { icon: <Camera className="w-6 h-6" />, title: "Sunset Views", description: "Spectacular sunsets over the Atlantic Ocean" },
-    { icon: <MapPin className="w-6 h-6" />, title: "Twelve Apostles", description: "Dramatic mountain backdrop for unforgettable photos" },
-  ];
+ const highlights = [
+  {
+    icon: <Palette className="w-6 h-6" />,
+    title: "Colorful Streets",
+    description: "Walk among vibrant houses and cobblestone lanes",
+  },
+  {
+    icon: <UtensilsCrossed className="w-6 h-6" />,
+    title: "Cape Malay Cuisine",
+    description: "Taste authentic dishes and traditional spices",
+  },
+  {
+    icon: <Landmark className="w-6 h-6" />,
+    title: "Historic Mosques",
+    description: "Discover landmarks like the Auwal Mosque",
+  },
+  {
+    icon: <BookOpen className="w-6 h-6" />,
+    title: "Living Heritage",
+    description: "Explore museums and hear community stories",
+  },
+];
 
   const localTips = [
-    "Visit during sunset for the most spectacular views and photo opportunities",
-    "Book restaurants in advance during peak season (December-February)",
-    "The beach can get windy - bring a windbreaker even on sunny days",
-    "Parking can be challenging - arrive early or use Uber/metered parking",
-    "Try the coastal walk to Clifton beaches for stunning ocean views",
-  ];
+  "Visit in the morning or late afternoon for the best light on the colorful houses",
+  "Join a guided walking tour to learn about the area’s rich history and culture",
+  "Respect residents’ privacy when taking photos in the neighborhood",
+  "Try local Cape Malay dishes from family-run eateries or cooking classes",
+  "Stop by the Bo-Kaap Museum for deeper insight into the community’s heritage",
+];
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -32,7 +49,7 @@ const CampsBay = () => {
       
       {/* Hero Section */}
       <div className="relative h-[60vh] overflow-hidden">
-        <img src={campsBayImage} alt="Camps Bay" className="w-full h-full object-cover" />
+        <img src={boKaapImage} alt="Camps Bay" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-overlay" />
         <div className="absolute inset-0 flex items-center justify-center text-primary-foreground text-center px-4">
           <div className="max-w-3xl animate-fade-up">
@@ -54,23 +71,17 @@ const CampsBay = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
             <div className="lg:col-span-2 space-y-6">
               <div>
-                <h2 className="text-3xl font-bold mb-4">About Camps Bay</h2>
+                <h2 className="text-3xl font-bold mb-4">About Bo Kaap</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Camps Bay is one of Cape Town's most exclusive and beautiful beach suburbs, nestled between the 
-                  dramatic Twelve Apostles mountain range and the sparkling Atlantic Ocean. This stunning location 
-                  offers pristine white sand beaches, crystal-clear waters, and a vibrant promenade lined with 
-                  trendy restaurants, cafés, and bars.
+                  Bo-Kaap is one of Cape Town’s most vibrant and historic neighborhoods, known for its brightly painted houses, cobblestone streets, and rich cultural heritage. Nestled against the slopes of Signal Hill, this area is a living testament to resilience, community, and tradition.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  The beach is perfectly framed by the iconic peaks of the Twelve Apostles, creating one of the most 
-                  photographed landscapes in South Africa. Whether you're looking to sunbathe, swim, or simply watch 
-                  the spectacular sunset while sipping cocktails at a beachfront venue, Camps Bay offers an 
-                  unmatched coastal experience.
+                  Originally established in the 1760s, Bo-Kaap was home to freed slaves, artisans, and immigrants brought to the Cape from Malaysia, Indonesia, and other parts of Africa and Asia. Over the centuries, these communities blended their traditions, giving rise to a unique Cape Malay culture that continues to shape the area today.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  The area attracts both locals and international visitors with its sophisticated yet relaxed 
-                  atmosphere. During summer months, the beach comes alive with sunbathers, swimmers, and beach 
-                  volleyball players, while the promenade buzzes with energy well into the evening.
+                  The neighborhood is famous for its colorful houses, each one painted in bold hues that represent freedom, individuality, and joy. Walking through Bo-Kaap, you’ll encounter the sounds of the athaan (call to prayer) from centuries-old mosques, the aroma of spices drifting from family kitchens, and the warmth of a community that has preserved its identity through generations.
+
+Bo-Kaap is more than a tourist destination—it is a living, breathing heritage site. It embodies history, faith, and culture, while also representing the ongoing fight to preserve traditions in the face of modern challenges. From its delicious Cape Malay cuisine to its festivals, music, and stories, Bo-Kaap stands as a symbol of Cape Town’s multicultural spirit.
                 </p>
               </div>
 
@@ -104,9 +115,9 @@ const CampsBay = () => {
               </Card>
 
               <Card className="p-6 bg-gradient-ocean text-primary-foreground">
-                <h3 className="text-xl font-bold mb-4">Visit Camps Bay</h3>
+                <h3 className="text-xl font-bold mb-4">Visit Bo-Kaap</h3>
                 <p className="mb-6 text-sm opacity-90">
-                  Include Camps Bay in your Cape Town tour and experience one of the world's most beautiful beaches.
+                  Include Bo-Kaap in your Cape Town tour and experience one of the world's most beautiful neighborhoods.
                 </p>
                 <Button 
                   onClick={() => setShowBooking(true)} 
@@ -125,26 +136,27 @@ const CampsBay = () => {
               </Card>
 
               {/* Embedded Map */}
-              <Card className="p-6">
-                <h3 className="text-xl font-bold mb-4">Location</h3>
-                <div className="aspect-video rounded-lg overflow-hidden">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.8346799999997!2d18.377!3d-33.951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc675d49e7e1f9%3A0x26a431b2035c1479!2sCamps%20Bay%2C%20Cape%20Town!5e0!3m2!1sen!2sza!4v1234567890"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-              </Card>
+   <Card className="p-6">
+  <h3 className="text-xl font-bold mb-4">Location</h3>
+  <div className="aspect-video rounded-lg overflow-hidden">
+    <iframe
+      title="Bo-Kaap, Cape Town — interactive map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.445099813261!2d18.409!3d-33.9183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc67619b7dc24d%3A0x9af294ee8b5d0df!2sBo-Kaap%2C%20Cape%20Town!5e0!3m2!1sen!2sza!4v1696247461234!5m2!1sen!2sza"
+      className="w-full h-full border-0"
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  </div>
+</Card>
+
+
             </div>
           </div>
 
           {/* Related Activities */}
           <Card className="p-8 bg-gradient-sunset text-primary-foreground text-center">
-            <h3 className="text-2xl font-bold mb-4">Explore Things to Do in Camps Bay</h3>
+            <h3 className="text-2xl font-bold mb-4">Explore Things to Do in Bo Kaap</h3>
             <p className="mb-6 opacity-90">Swimming, dining, beach walks, and sunset watching</p>
             <Link to="/things-to-do">
               <Button variant="secondary" size="lg">
