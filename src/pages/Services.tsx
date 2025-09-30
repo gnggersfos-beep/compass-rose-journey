@@ -10,10 +10,10 @@ import winelandsImage from "@/assets/winelands.jpg";
 import capePointImage from "@/assets/cape-point.jpg";
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
 import shuttleImage from "@/assets/AirportShuttle.jpg";
-import customImage from "@/assets/custom-tour.jpg";
-import wineImage from "@/assets/wine-tour.jpg";
+import customImage from "@/assets/asher-pardey-KQqzXXS4mug-unsplash.jpg";
+import wineImage from "@/assets/pexels-vladimirsrajber-28000462.jpg";
 import adventureImage from "@/assets/adventure-tour.jpg";
-import groupImage from "@/assets/group-tour.jpg"; 
+import groupImage from "@/assets/group tour.jpg"; 
 import newImage from "@/assets/new.jpg";
 
 const Services = () => {
@@ -33,7 +33,7 @@ const Services = () => {
     link: "/services/airport-transfers",
   },
     {
-      image: capePointImage,
+      image: customImage,
       title: "Custom Tours",
       description: "Personalized itineraries designed around your interests, schedule, and budget. Experience Cape Town your way with our expert local guides.",
       features: [
@@ -46,7 +46,7 @@ const Services = () => {
       link: "/services/custom-tours",
     },
     {
-      image: winelandsImage,
+      image: wineImage,
       title: "Wine Tours",
       description: "Explore world-renowned wine regions including Stellenbosch, Franschhoek, and Constantia. Taste exceptional wines and enjoy gourmet pairings.",
       features: [
@@ -72,7 +72,7 @@ const Services = () => {
       link: "/services/adventure-trips",
     },
     {
-      image: capePointImage,
+      image: groupImage,
       title: "Group Packages",
       description: "Special rates and customized experiences for families, corporate groups, and large parties. Team building and events catering available.",
       features: [
@@ -85,7 +85,7 @@ const Services = () => {
       link: "/services/group-packages",
     },
     {
-      image: heroServiceImage,
+      image: newImage,
       title: "Private Shuttles",
       description: "Comfortable transportation for any occasion. Point-to-point service, day trips, or multi-day tours with professional drivers.",
       features: [

@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import BookingDialog from "@/components/booking/BookingDialog";
 import capePointImage from "@/assets/cape-point.jpg";
 import { ArrowLeft, MapPin, Clock, Users, Heart } from "lucide-react";
+import customImage from "@/assets/asher-pardey-KQqzXXS4mug-unsplash.jpg";
 
 const CustomTours = () => {
   const [showBooking, setShowBooking] = useState(false);
@@ -29,7 +30,7 @@ const CustomTours = () => {
         title="Custom Tours"
         subtitle="Your Journey, Your Way"
         description="Personalized experiences designed around your interests, pace, and preferences"
-        backgroundImage={capePointImage}
+        backgroundImage={customImage}
         height="medium"
       />
 

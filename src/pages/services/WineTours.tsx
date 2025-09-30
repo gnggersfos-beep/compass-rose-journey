@@ -6,7 +6,7 @@ import Hero from "@/components/sections/Hero";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import BookingDialog from "@/components/booking/BookingDialog";
-import winelandsImage from "@/assets/winelands.jpg";
+import winelandsImage from "@/assets/af.jpg";
 import { ArrowLeft, Wine, UtensilsCrossed, Camera, MapPin } from "lucide-react";
 
 const WineTours = () => {
