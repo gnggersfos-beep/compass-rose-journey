@@ -21,6 +21,7 @@ import AdventureTrips from "./pages/services/AdventureTrips";
 
 // Place Pages
 import CampsBay from "./pages/places/CampsBay";
+import Bokaap from "./pages/places/Bokaap";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
           
           {/* Place Detail Pages */}
           <Route path="/places/camps-bay" element={<CampsBay />} />
+          <Route path="/places/bo-kaap" element={<Bokaap />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
