@@ -24,7 +24,7 @@ import CampsBay from "./pages/places/CampsBay";
 import Bokaap from "./pages/places/Bokaap";
 import Franschhoek from "./pages/places/Franschhoek";
 import Capepoint from "./pages/places/Capepoint";
-import Capewinelands from "./pages/places/Capewinelands";
+import Tablemountain from "./pages/places/Tablemountain";
 
 const queryClient = new QueryClient();
 
@@ -55,7 +55,7 @@ const App = () => (
           <Route path="/places/bo-kaap" element={<Bokaap />} />
           <Route path="/places/franschhoek" element={<Franschhoek />} />
           <Route path="/places/cape-point" element={<Capepoint />} />
-          <Route path="/places/cape-winelands" element={<Capewinelands />} />
+          <Route path="/places/table-mountain" element={<Tablemountain />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

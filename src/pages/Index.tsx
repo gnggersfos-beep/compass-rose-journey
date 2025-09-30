@@ -12,7 +12,7 @@ import winelandsImage from "@/assets/Wines.jpg";
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
 import campsBayImage from "@/assets/campss.jpg";
 import boKaapImage from "@/assets/bo-kaap.jpg";
-import vaWaterfrontImage from "@/assets/Waterfront.jpg";
+import vaWaterfrontImage from "@/assets/print.jpg";
 import { MapPin, Calendar, Users, Compass } from "lucide-react";
 
 const Index = () => {

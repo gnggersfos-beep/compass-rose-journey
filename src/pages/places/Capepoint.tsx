@@ -5,42 +5,58 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import BookingDialog from "@/components/booking/BookingDialog";
-import campsBayImage from "@/assets/campss.jpg";
-import { ArrowLeft, MapPin, Sun, UtensilsCrossed, Camera } from "lucide-react";
-
+import campsBayImage from "@/assets/janan-OoW1DMDCV1Y-unsplash.jpg";
+import { ArrowLeft, MapPin, Sun, UtensilsCrossed, Camera , Compass, Lamp} from "lucide-react";
 const CampsBay = () => {
   const [showBooking, setShowBooking] = useState(false);
 
   const highlights = [
-    { icon: <Sun className="w-6 h-6" />, title: "Pristine Beach", description: "Crystal-clear waters and white sand backed by majestic mountains" },
-    { icon: <UtensilsCrossed className="w-6 h-6" />, title: "Dining Scene", description: "World-class restaurants along the vibrant beach promenade" },
-    { icon: <Camera className="w-6 h-6" />, title: "Sunset Views", description: "Spectacular sunsets over the Atlantic Ocean" },
-    { icon: <MapPin className="w-6 h-6" />, title: "Twelve Apostles", description: "Dramatic mountain backdrop for unforgettable photos" },
-  ];
+  {
+    icon: <Lamp className="w-6 h-6" />,
+    title: "Cape Point Lighthouse",
+    description: "Visit the iconic lighthouse perched on the cliffs with panoramic views",
+  },
+  {
+    icon: <Camera className="w-6 h-6" />,
+    title: "Scenic Views",
+    description: "Capture breathtaking ocean vistas, cliffs, and dramatic landscapes",
+  },
+  {
+    icon: <Compass className="w-6 h-6" />,
+    title: "Nature Trails",
+    description: "Explore hiking paths through fynbos, coastal cliffs, and wildlife areas",
+  },
+  {
+    icon: <MapPin className="w-6 h-6" />,
+    title: "Cape of Good Hope",
+    description: "Stand at the famous landmark where the Atlantic and Indian Oceans meet",
+  },
+];
 
-  const localTips = [
-    "Visit during sunset for the most spectacular views and photo opportunities",
-    "Book restaurants in advance during peak season (December-February)",
-    "The beach can get windy - bring a windbreaker even on sunny days",
-    "Parking can be challenging - arrive early or use Uber/metered parking",
-    "Try the coastal walk to Clifton beaches for stunning ocean views",
-  ];
+const localTips = [
+  "Arrive early to avoid crowds, especially at the lighthouse and viewpoint",
+  "Wear comfortable shoes for hiking and exploring the cliffs",
+  "Bring a windbreaker – Cape Point can be very windy even on sunny days",
+  "Keep an eye out for baboons and local wildlife, but do not feed them",
+  "Take the scenic drive along the Cape Point route and stop for photo opportunities",
+];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
-      <div className="relative h-[60vh] overflow-hidden">
-        <img src={campsBayImage} alt="Camps Bay" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-overlay" />
-        <div className="absolute inset-0 flex items-center justify-center text-primary-foreground text-center px-4">
-          <div className="max-w-3xl animate-fade-up">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Camps Bay</h1>
-            <p className="text-xl md:text-2xl opacity-90">Cape Town's Most Glamorous Beach Suburb</p>
-          </div>
-        </div>
-      </div>
+     <div className="relative h-[60vh] overflow-hidden">
+  <img src={campsBayImage} alt="Cape Point" className="w-full h-full object-cover" />
+  <div className="absolute inset-0 bg-gradient-overlay" />
+  <div className="absolute inset-0 flex items-center justify-center text-primary-foreground text-center px-4">
+    <div className="max-w-3xl animate-fade-up">
+      <h1 className="text-4xl md:text-6xl font-bold mb-4">Cape Point</h1>
+      <p className="text-xl md:text-2xl opacity-90">Where the Atlantic and Indian Oceans Meet</p>
+    </div>
+  </div>
+</div>
+
 
       <section className="py-16 bg-pattern-waves">
         <div className="container mx-auto px-4">
@@ -54,23 +70,21 @@ const CampsBay = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
             <div className="lg:col-span-2 space-y-6">
               <div>
-                <h2 className="text-3xl font-bold mb-4">About Camps Bay</h2>
+                <h2 className="text-3xl font-bold mb-4">About Cape Point</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Camps Bay is one of Cape Town's most exclusive and beautiful beach suburbs, nestled between the 
-                  dramatic Twelve Apostles mountain range and the sparkling Atlantic Ocean. This stunning location 
-                  offers pristine white sand beaches, crystal-clear waters, and a vibrant promenade lined with 
-                  trendy restaurants, cafés, and bars.
+                  Cape Point is a dramatic promontory at the southeastern tip of the Cape Peninsula, where the Atlantic and 
+        Indian Oceans converge. Famous for its rugged cliffs, sweeping ocean views, and rich biodiversity, 
+        Cape Point is part of the Table Mountain National Park and offers a truly spectacular natural setting.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  The beach is perfectly framed by the iconic peaks of the Twelve Apostles, creating one of the most 
-                  photographed landscapes in South Africa. Whether you're looking to sunbathe, swim, or simply watch 
-                  the spectacular sunset while sipping cocktails at a beachfront venue, Camps Bay offers an 
-                  unmatched coastal experience.
+                  The area features scenic hiking trails, iconic lighthouses, and lookout points that provide breathtaking 
+        panoramas of the coastline. Visitors can spot wildlife, explore the fynbos vegetation, and experience 
+        one of South Africa’s most photographed natural landmarks.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  The area attracts both locals and international visitors with its sophisticated yet relaxed 
-                  atmosphere. During summer months, the beach comes alive with sunbathers, swimmers, and beach 
-                  volleyball players, while the promenade buzzes with energy well into the evening.
+                  Cape Point attracts both nature enthusiasts and adventure seekers from around the world. With dramatic 
+        cliffs, powerful ocean waves, and rich flora and fauna, it offers an unforgettable experience for all 
+        who visit this iconic destination.
                 </p>
               </div>
 
@@ -104,9 +118,9 @@ const CampsBay = () => {
               </Card>
 
               <Card className="p-6 bg-gradient-ocean text-primary-foreground">
-                <h3 className="text-xl font-bold mb-4">Visit Camps Bay</h3>
+                <h3 className="text-xl font-bold mb-4">Visit Cape Point</h3>
                 <p className="mb-6 text-sm opacity-90">
-                  Include Camps Bay in your Cape Town tour and experience one of the world's most beautiful beaches.
+                  Include Cape Point in your Cape Town tour and experience one of the world's most beautiful beaches.
                 </p>
                 <Button 
                   onClick={() => setShowBooking(true)} 
@@ -118,7 +132,7 @@ const CampsBay = () => {
                 <Button 
                   variant="outline"
                   className="w-full border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-                  onClick={() => window.open("https://wa.me/27625803352?text=" + encodeURIComponent("I'd like to visit Camps Bay"), "_blank")}
+                  onClick={() => window.open("https://wa.me/27625803352?text=" + encodeURIComponent("I'd like to visit Cape Point"), "_blank")}
                 >
                   WhatsApp Us
                 </Button>
@@ -129,7 +143,7 @@ const CampsBay = () => {
                 <h3 className="text-xl font-bold mb-4">Location</h3>
                 <div className="aspect-video rounded-lg overflow-hidden">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.8346799999997!2d18.377!3d-33.951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc675d49e7e1f9%3A0x26a431b2035c1479!2sCamps%20Bay%2C%20Cape%20Town!5e0!3m2!1sen!2sza!4v1234567890"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.1234567890123!2d18.498!3d-34.356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcdbeb3c7f6f123%3A0xabcdef1234567890!2sCape%20Point%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1696247461234"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -144,8 +158,8 @@ const CampsBay = () => {
 
           {/* Related Activities */}
           <Card className="p-8 bg-gradient-sunset text-primary-foreground text-center">
-            <h3 className="text-2xl font-bold mb-4">Explore Things to Do in Camps Bay</h3>
-            <p className="mb-6 opacity-90">Swimming, dining, beach walks, and sunset watching</p>
+            <h3 className="text-2xl font-bold mb-4">Explore Things to Do in Cape Point</h3>
+            <p className="mb-6 opacity-90">Hiking, wildlife spotting, lighthouse visits, and scenic ocean views</p>
             <Link to="/things-to-do">
               <Button variant="secondary" size="lg">
                 View All Activities

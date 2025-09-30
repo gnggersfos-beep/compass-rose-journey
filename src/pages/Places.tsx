@@ -6,9 +6,9 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import campsBayImage from "@/assets/campss.jpg";
 import boKaapImage from "@/assets/madiba-de-african-inspiration-XrNKe8VLMRo-unsplash.jpg";
-import vaWaterfrontImage from "@/assets/Waterfront.jpg";
+import vaWaterfrontImage from "@/assets/print.jpg";
 import capePointImage from "@/assets/janan-OoW1DMDCV1Y-unsplash.jpg";
-import winelandsImage from "@/assets/Wines.jpg";
+import winelandsImage from "@/assets/pexels-pixabay-259447.jpg";
 import heroPlacesImage from "@/assets/places.jpg";
 
 const Places = () => {
@@ -58,14 +58,14 @@ const Places = () => {
       ],
     },
     {
-      title: "Cape Winelands",
-      description: "A picturesque region of rolling vineyards, historic estates, and world-renowned wines, just an hour from Cape Town.",
+      title: "Table-Mountain",
+      description: "An iconic landmark overlooking Cape Town, featuring dramatic cliffs, scenic hiking trails, and panoramic views of the city and coastline.",
       image: winelandsImage,
       highlights: [
-        "Award-winning wine tastings",
-        "Cape Dutch architecture",
-        "Gourmet dining experiences",
-        "Stunning mountain scenery",
+        "Cable car rides to the summit",
+  "Panoramic views of Cape Town and the coastline",
+  "Hiking trails for all levels of experience",
+  "Rich biodiversity and unique fynbos vegetation",
       ],
     },
   ];
