@@ -1,20 +1,32 @@
 import Header from "@/components/layout/Header";
+import { useState } from "react";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import TourCard from "@/components/sections/TourCard";
+<<<<<<< HEAD
 import campsBayImage from "@/assets/tyzana-craig-cTcQIscaOrc-unsplash.jpg";
 import capePointImage from "@/assets/pexels-dkeats-34090435 (1).jpg";
 import winelandsImage from "@/assets/nenad-gataric-2GZvGZh4dJc-unsplash.jpg";
+=======
+import campsBayImage from "@/assets/camps-bay.jpg";
+import capePointImage from "@/assets/cape-point.jpg";
+import BookingDialog from "@/components/booking/BookingDialog";
+import winelandsImage from "@/assets/winelands.jpg";
+>>>>>>> 561077da3dde80cd4b1451a224c58c7f9fec9961
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
 import heroThingsImage from "@/assets/things.jpg";
 import hikingImage from "@/assets/hiking.jpg";
 import ghanaImage from "@/assets/devon-janse-van-rensburg-RAAXmcYdoIg-unsplash.jpg";
 
 const ThingsToDo = () => {
+  const [showBooking, setShowBooking] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
   const activities = [
     {
       title: "Beach Days",
-      description: "Relax on pristine beaches like Camps Bay, Clifton, and Muizenberg. Perfect for sunbathing, surfing, or sunset watching.",
+      description:
+        "Relax on pristine beaches like Camps Bay, Clifton, and Muizenberg. Perfect for sunbathing, surfing, or sunset watching.",
       image: campsBayImage,
       duration: "Flexible",
       location: "Various beaches",
@@ -22,15 +34,22 @@ const ThingsToDo = () => {
     },
     {
       title: "Hiking Adventures",
+<<<<<<< HEAD
       description: "Conquer Table Mountain, Lion's Head, or Chapman's Peak. Experience breathtaking views and diverse trails for all fitness levels.",
       image: hikingImage,
+=======
+      description:
+        "Conquer Table Mountain, Lion's Head, or Chapman's Peak. Experience breathtaking views and diverse trails for all fitness levels.",
+      image: capePointImage,
+>>>>>>> 561077da3dde80cd4b1451a224c58c7f9fec9961
       duration: "2-8 hours",
       location: "Cape Peninsula",
       groupSize: "Small groups",
     },
     {
       title: "Wine Tasting Tours",
-      description: "Explore world-class wine estates in Stellenbosch, Franschhoek, and Constantia. Savor exceptional wines and gourmet pairings.",
+      description:
+        "Explore world-class wine estates in Stellenbosch, Franschhoek, and Constantia. Savor exceptional wines and gourmet pairings.",
       image: winelandsImage,
       duration: "Full day",
       location: "Winelands",
@@ -39,7 +58,8 @@ const ThingsToDo = () => {
     },
     {
       title: "Adventure Sports",
-      description: "Sandboarding on Atlantis Dunes, shark cage diving, paragliding from Signal Hill, or kitesurfing in Langebaan.",
+      description:
+        "Sandboarding on Atlantis Dunes, shark cage diving, paragliding from Signal Hill, or kitesurfing in Langebaan.",
       image: atlantisDunesImage,
       duration: "Half to full day",
       location: "Various locations",
@@ -48,7 +68,8 @@ const ThingsToDo = () => {
     },
     {
       title: "Wildlife Encounters",
-      description: "Visit penguin colonies at Boulders Beach, go whale watching (seasonal), or explore wildlife sanctuaries and nature reserves.",
+      description:
+        "Visit penguin colonies at Boulders Beach, go whale watching (seasonal), or explore wildlife sanctuaries and nature reserves.",
       image: capePointImage,
       duration: "Half to full day",
       location: "False Bay & surrounds",
@@ -56,18 +77,39 @@ const ThingsToDo = () => {
     },
     {
       title: "Cultural Experiences",
+<<<<<<< HEAD
       description: "Explore Township tours, Bo-Kaap heritage walks, Robben Island Museum, and local markets showcasing Cape Town's diverse culture.",
       image: ghanaImage,
+=======
+      description:
+        "Explore Township tours, Bo-Kaap heritage walks, Robben Island Museum, and local markets showcasing Cape Town's diverse culture.",
+      image: campsBayImage,
+>>>>>>> 561077da3dde80cd4b1451a224c58c7f9fec9961
       duration: "2-6 hours",
       location: "City & townships",
       groupSize: "Small to medium groups",
     },
   ];
 
+  const categories = [
+    "Beaches",
+    "Hiking",
+    "Wine Tours",
+    "Adventure",
+    "Wildlife",
+    "Culture",
+    "Shopping",
+    "Nightlife",
+    "Food Tours",
+    "Photography",
+    "Water Sports",
+    "Scenic Drives",
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <Hero
         title="Things To Do in Cape Town"
         subtitle="Adventures for Everyone"
@@ -80,9 +122,12 @@ const ThingsToDo = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Popular Activities</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Popular Activities
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Whether you seek adventure, relaxation, or cultural immersion, Cape Town has something for everyone
+              Whether you seek adventure, relaxation, or cultural immersion, Cape
+              Town has something for everyone
             </p>
           </div>
 
@@ -104,32 +149,24 @@ const ThingsToDo = () => {
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Browse by Category</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Browse by Category
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Find the perfect activity based on your interests
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              "Beaches",
-              "Hiking",
-              "Wine Tours",
-              "Adventure",
-              "Wildlife",
-              "Culture",
-              "Shopping",
-              "Nightlife",
-              "Food Tours",
-              "Photography",
-              "Water Sports",
-              "Scenic Drives"
-            ].map((category, index) => (
+            {categories.map((category, index) => (
               <button
                 key={category}
                 className="p-6 bg-card rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-lg animate-fade-up"
                 style={{ animationDelay: `${index * 0.05}s` }}
-                onClick={() => window.open("https://wa.me/27625803352?text=" + encodeURIComponent(`I'm interested in ${category} activities`), "_blank")}
+                onClick={() => {
+                  setSelectedCategory(category);
+                  setShowBooking(true);
+                }}
               >
                 <span className="font-semibold text-sm">{category}</span>
               </button>
@@ -137,6 +174,13 @@ const ThingsToDo = () => {
           </div>
         </div>
       </section>
+
+      {/* Booking Dialog */}
+      <BookingDialog
+        open={showBooking}
+        onOpenChange={setShowBooking}
+        defaultTour={selectedCategory || "custom-tour"}
+      />
 
       <Footer />
     </div>
