@@ -13,6 +13,15 @@ import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 
+// Service Pages
+import AirportTransfers from "./pages/services/AirportTransfers";
+import CustomTours from "./pages/services/CustomTours";
+import WineTours from "./pages/services/WineTours";
+import AdventureTrips from "./pages/services/AdventureTrips";
+
+// Place Pages
+import CampsBay from "./pages/places/CampsBay";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -30,6 +39,16 @@ const App = () => (
           <Route path="/areas-to-stay" element={<AreasToStay />} />
           <Route path="/services" element={<Services />} />
           <Route path="/gallery" element={<Gallery />} />
+          
+          {/* Service Detail Pages */}
+          <Route path="/services/airport-transfers" element={<AirportTransfers />} />
+          <Route path="/services/custom-tours" element={<CustomTours />} />
+          <Route path="/services/wine-tours" element={<WineTours />} />
+          <Route path="/services/adventure-trips" element={<AdventureTrips />} />
+          
+          {/* Place Detail Pages */}
+          <Route path="/places/camps-bay" element={<CampsBay />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

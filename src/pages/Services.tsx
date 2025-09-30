@@ -171,20 +171,21 @@ const Services = () => {
 
                   {/* Buttons */}
                   <div className="flex gap-2">
-                    <Button
-                      variant="default"
-                      size="sm"
-                      className="flex-1"
-                      onClick={() => handleContactForService(service.title)}
-                    >
-                      Book Now
-                    </Button>
+                    <Link to={service.link} className="flex-1">
+                      <Button
+                        variant="default"
+                        size="sm"
+                        className="w-full"
+                      >
+                        Learn More
+                      </Button>
+                    </Link>
                     <Button
                       variant="outline"
                       size="sm"
                       onClick={() => handleContactForService(service.title)}
                     >
-                      Details
+                      Book
                     </Button>
                   </div>
                 </div>

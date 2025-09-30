@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
@@ -150,9 +151,11 @@ const Places = () => {
                       <Button onClick={() => handleBookNow(area.title)}>
                         Book a Tour
                       </Button>
-                      <Button variant="outline" onClick={() => handleBookNow(area.title)}>
-                        Learn More
-                      </Button>
+                      <Link to={`/places/${area.title.toLowerCase().replace(/\s+/g, '-').replace('&', 'and')}`}>
+                        <Button variant="outline">
+                          Learn More
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>
