@@ -36,7 +36,7 @@ const Places = () => {
       ],
     },
     {
-      title: "V&A Waterfront",
+      title: "Franschhoek",
       description: "Cape Town's premier shopping and entertainment destination, combining historic harbor atmosphere with modern amenities and attractions.",
       image: vaWaterfrontImage,
       highlights: [

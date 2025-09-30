@@ -58,7 +58,7 @@ const Index = () => {
       image: boKaapImage,
     },
     {
-      title: "V&A Waterfront",
+      title: "Franschhoek",
       description: "Shopping, dining, and entertainment hub",
       image: vaWaterfrontImage,
     },
