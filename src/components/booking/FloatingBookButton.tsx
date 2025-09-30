@@ -42,7 +42,7 @@ const FloatingBookButton = () => {
           onMouseEnter={() => setShowOptions(true)}
           onMouseLeave={() => setShowOptions(false)}
           onClick={() => setShowOptions(!showOptions)}
-          className="w-16 h-16 rounded-full bg-gradient-sunset text-primary-foreground shadow-2xl hover:shadow-3xl hover:scale-110 transition-all flex items-center justify-center animate-float"
+          className="w-16 h-16 rounded-full text-primary-foreground shadow-2xl hover:shadow-3xl hover:scale-110 transition-all flex items-center justify-center animate-float"
           aria-label="Contact options"
         >
           <MessageCircle className="w-7 h-7" />
