@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
-
+import Booking from "@/assets/Booking Asset 3.png";
+import Tripad from "@/assets/Trip AdvisorAsset 2.png"
+import CapeTravel from "@/assets/Capetown Asset 4.png"
+import { Image } from "@radix-ui/react-avatar";
 const PartnerCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Partner logos (placeholder - would be real partner logos)
+  // Replace with actual image URLs of partner logos
   const partners = [
-    { name: "Cape Town Tourism", logo: "🏛️" },
-    { name: "SA Tourism", logo: "🇿🇦" },
-    { name: "Table Mountain", logo: "⛰️" },
-    { name: "V&A Waterfront", logo: "⚓" },
-    { name: "Cape Winelands", logo: "🍷" },
-    { name: "Two Oceans Aquarium", logo: "🐠" },
-    { name: "Robben Island", logo: "🏝️" },
-    { name: "Kirstenbosch Gardens", logo: "🌺" },
-  ];
+    { logo: Booking},
+    { logo: Tripad },
+    { logo: CapeTravel },
+    { logo: Booking},
+    { logo: Tripad },
+    { logo: CapeTravel },
+     { logo: Booking},
+    { logo: Tripad },
+    { logo: CapeTravel },
+  ]
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,7 +33,7 @@ const PartnerCarousel = () => {
         <h3 className="text-center text-lg font-semibold mb-8 text-muted-foreground">
           Trusted Partners & Affiliates
         </h3>
-        
+
         <div className="relative overflow-hidden">
           <div
             className="flex transition-transform duration-500 ease-in-out gap-12 items-center justify-center"
@@ -40,12 +44,13 @@ const PartnerCarousel = () => {
             {[...partners, ...partners].map((partner, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-32 h-24 flex flex-col items-center justify-center bg-card rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-110 cursor-pointer"
+                className="flex-shrink-0 w-32 h-24 flex items-center justify-center bg-card rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-110 cursor-pointer"
               >
-                <span className="text-4xl mb-2">{partner.logo}</span>
-                <p className="text-xs text-center font-medium text-muted-foreground">
-                  {partner.name}
-                </p>
+                <img
+                  src={partner.logo}
+                  alt="Partner Logo"
+                  className="max-h-16 object-contain"
+                />
               </div>
             ))}
           </div>
