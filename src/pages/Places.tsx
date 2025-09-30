@@ -8,8 +8,8 @@ import campsBayImage from "@/assets/camps-bay.jpg";
 import boKaapImage from "@/assets/bo-kaap.jpg";
 import vaWaterfrontImage from "@/assets/va-waterfront.jpg";
 import capePointImage from "@/assets/cape-point.jpg";
-import winelandsImage from "@/assets/winelands.jpg";
-import heroImage from "@/assets/hero-table-mountain.jpg";
+import winelandsImage from "@/assets/Wines.jpg";
+import heroPlacesImage from "@/assets/places.jpg";
 
 const Places = () => {
   const areas = [
@@ -86,7 +86,7 @@ const Places = () => {
         title="Explore Cape Town"
         subtitle="Discover Amazing Places"
         description="From pristine beaches to vibrant neighborhoods, discover the diverse attractions that make Cape Town unforgettable"
-        backgroundImage={heroImage}
+        backgroundImage={heroPlacesImage}
         height="medium"
       />
 

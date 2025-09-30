@@ -6,12 +6,13 @@ import PartnerCarousel from "@/components/sections/PartnerCarousel";
 import FloatingBookButton from "@/components/booking/FloatingBookButton";
 import { Card } from "@/components/ui/card";
 import heroImage from "@/assets/hero-table-mountain.jpg";
+import heroAboutImage from "@/assets/abouts.jpg";
 import capePointImage from "@/assets/cape-point.jpg";
-import winelandsImage from "@/assets/winelands.jpg";
+import winelandsImage from "@/assets/Wines.jpg";
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
-import campsBayImage from "@/assets/camps-bay.jpg";
+import campsBayImage from "@/assets/campss.jpg";
 import boKaapImage from "@/assets/bo-kaap.jpg";
-import vaWaterfrontImage from "@/assets/va-waterfront.jpg";
+import vaWaterfrontImage from "@/assets/Waterfront.jpg";
 import { MapPin, Calendar, Users, Compass } from "lucide-react";
 
 const Index = () => {

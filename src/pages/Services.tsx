@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Plane, MapIcon, Wine, Mountain, Users, Car } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-table-mountain.jpg";
+import heroServiceImage from "@/assets/services.jpg";
 import winelandsImage from "@/assets/winelands.jpg";
 import capePointImage from "@/assets/cape-point.jpg";
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
@@ -16,7 +16,7 @@ const Services = () => {
       icon: <Plane className="w-12 h-12 text-primary" />,
       title: "Airport Transfers",
       description: "Comfortable, reliable transfers between Cape Town International Airport and your accommodation. Professional drivers and luxury vehicles.",
-      image: heroImage,
+      image: heroServiceImage,
       features: [
         "Meet & greet service",
         "Flight tracking",
@@ -86,7 +86,7 @@ const Services = () => {
       icon: <Car className="w-12 h-12 text-primary" />,
       title: "Private Shuttles",
       description: "Comfortable transportation for any occasion. Point-to-point service, day trips, or multi-day tours with professional drivers.",
-      image: heroImage,
+      image: heroServiceImage,
       features: [
         "Clean, modern vehicles",
         "Professional chauffeurs",

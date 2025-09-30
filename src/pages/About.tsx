@@ -3,7 +3,7 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import { Card } from "@/components/ui/card";
 import { Heart, Users, Award, Leaf } from "lucide-react";
-import heroImage from "@/assets/hero-table-mountain.jpg";
+import heroAboutImage from "@/assets/abouts.jpg";
 
 const About = () => {
   const values = [
@@ -37,7 +37,7 @@ const About = () => {
         title="About Compass Rose Travel"
         subtitle="Our Story"
         description="Sharing the magic of Cape Town with travelers from around the world"
-        backgroundImage={heroImage}
+        backgroundImage={heroAboutImage}
         height="medium"
         showSecondaryButton={false}
         primaryButtonText="Contact Us"

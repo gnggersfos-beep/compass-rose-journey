@@ -6,7 +6,7 @@ import campsBayImage from "@/assets/camps-bay.jpg";
 import capePointImage from "@/assets/cape-point.jpg";
 import winelandsImage from "@/assets/winelands.jpg";
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
-import heroImage from "@/assets/hero-table-mountain.jpg";
+import heroThingsImage from "@/assets/things.jpg";
 
 const ThingsToDo = () => {
   const activities = [
@@ -70,7 +70,7 @@ const ThingsToDo = () => {
         title="Things To Do in Cape Town"
         subtitle="Adventures for Everyone"
         description="From adrenaline-pumping activities to relaxing beach days, discover endless possibilities in the Mother City"
-        backgroundImage={heroImage}
+        backgroundImage={heroThingsImage}
         height="medium"
       />
 
