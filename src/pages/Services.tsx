@@ -114,7 +114,7 @@ const Services = () => {
         title="Our Services"
         subtitle="Excellence in Travel"
         description="From airport transfers to custom adventures, we provide comprehensive travel services tailored to your needs"
-        backgroundImage={heroImage}
+        backgroundImage={heroServiceImage}
         height="medium"
       />
 

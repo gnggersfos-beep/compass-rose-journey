@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-import campsBayImage from "@/assets/camps-bay.jpg";
+import campsBaImage from "@/assets/paul-macallan-idXrcOsU1xc-unsplash.jpg";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -54,7 +54,7 @@ Message: ${formData.message}`;
         title="Get In Touch"
         subtitle="Contact Us"
         description="We're here to help plan your perfect Cape Town adventure"
-        backgroundImage={campsBayImage}
+        backgroundImage={campsBaImage}
         height="medium"
         showSecondaryButton={false}
         primaryButtonText="Call Us Now"
