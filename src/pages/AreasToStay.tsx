@@ -7,7 +7,7 @@ import { Star, MapPin, Wifi, Coffee, Car } from "lucide-react";
 import campsBayImage from "@/assets/camps-bay.jpg";
 import vaWaterfrontImage from "@/assets/va-waterfront.jpg";
 import boKaapImage from "@/assets/bo-kaap.jpg";
-import heroImage from "@/assets/hero-table-mountain.jpg";
+import heroStayImage from "@/assets/stay.jpg";
 
 const AreasToStay = () => {
   const accommodations = [
@@ -89,7 +89,7 @@ const AreasToStay = () => {
         title="Where To Stay"
         subtitle="Accommodation in Cape Town"
         description="From luxury resorts to cozy guesthouses, find the perfect place to rest after your Cape Town adventures"
-        backgroundImage={heroImage}
+        backgroundImage={heroStayImage}
         height="medium"
         primaryButtonText="Get Recommendations"
       />
