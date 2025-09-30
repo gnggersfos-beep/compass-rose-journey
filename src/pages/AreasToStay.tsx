@@ -4,10 +4,13 @@ import Hero from "@/components/sections/Hero";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, MapPin, Wifi, Coffee, Car } from "lucide-react";
-import campsBayImage from "@/assets/camps-bay.jpg";
-import vaWaterfrontImage from "@/assets/va-waterfront.jpg";
-import boKaapImage from "@/assets/bo-kaap.jpg";
+import campsBayImage from "@/assets/pexels-taryn-elliott-7108804.jpg";
+import vaWaterfrontImage from "@/assets/pexels-magda-ehlers-pexels-32585933.jpg";
+import boKaapImage from "@/assets/pexels-eric-seddon-1664101-29024925.jpg";
 import heroStayImage from "@/assets/stay.jpg";
+import oberImage from "@/assets/CPT_Observatory-5.jpg";
+import conImage from "@/assets/unnamed.jpg";
+import seaPointImage from "@/assets/final.jpg";
 
 const AreasToStay = () => {
   const accommodations = [
@@ -45,7 +48,7 @@ const AreasToStay = () => {
         {
           name: "Constantia",
           description: "Wine estate lodges and manor houses in leafy suburbs",
-          image: campsBayImage,
+          image: conImage,
           priceRange: "R1,500 - R5,000 per night",
           amenities: ["Garden settings", "Wine estates", "Peaceful atmosphere", "Gourmet dining"],
         },
@@ -58,14 +61,14 @@ const AreasToStay = () => {
         {
           name: "Observatory",
           description: "Trendy neighborhood with affordable guesthouses and B&Bs",
-          image: boKaapImage,
+          image: oberImage,
           priceRange: "R400 - R1,200 per night",
           amenities: ["Bohemian vibe", "Local cafés", "Good transport", "Budget-friendly"],
         },
         {
           name: "Sea Point",
           description: "Coastal suburb with apartments and hostels near the promenade",
-          image: campsBayImage,
+          image: seaPointImage,
           priceRange: "R350 - R1,000 per night",
           amenities: ["Sea views", "Promenade access", "Restaurants", "Affordable dining"],
         },

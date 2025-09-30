@@ -9,23 +9,29 @@ import heroServiceImage from "@/assets/services.jpg";
 import winelandsImage from "@/assets/winelands.jpg";
 import capePointImage from "@/assets/cape-point.jpg";
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
+import shuttleImage from "@/assets/AirportShuttle.jpg";
+import customImage from "@/assets/custom-tour.jpg";
+import wineImage from "@/assets/wine-tour.jpg";
+import adventureImage from "@/assets/adventure-tour.jpg";
+import groupImage from "@/assets/group-tour.jpg"; 
+import newImage from "@/assets/new.jpg";
 
 const Services = () => {
   const services = [
     {
-      icon: <Plane className="w-12 h-12 text-primary" />,
-      title: "Airport Transfers",
-      description: "Comfortable, reliable transfers between Cape Town International Airport and your accommodation. Professional drivers and luxury vehicles.",
-      image: heroServiceImage,
-      features: [
-        "Meet & greet service",
-        "Flight tracking",
-        "Luxury vehicles",
-        "24/7 availability",
-        "Competitive rates",
-      ],
-      link: "/services/airport-transfers",
-    },
+        image: shuttleImage,
+    title: "Airport Transfers",
+    description:
+      "Comfortable, reliable transfers between Cape Town International Airport and your accommodation. Professional drivers and luxury vehicles.",
+    features: [
+      "Meet & greet service",
+      "Flight tracking",
+      "Luxury vehicles",
+      "24/7 availability",
+      "Competitive rates",
+    ],
+    link: "/services/airport-transfers",
+  },
     {
       icon: <MapIcon className="w-12 h-12 text-primary" />,
       title: "Custom Tours",

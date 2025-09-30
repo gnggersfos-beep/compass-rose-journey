@@ -2,11 +2,13 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import TourCard from "@/components/sections/TourCard";
-import campsBayImage from "@/assets/camps-bay.jpg";
+import campsBayImage from "@/assets/tyzana-craig-cTcQIscaOrc-unsplash.jpg";
 import capePointImage from "@/assets/pexels-dkeats-34090435 (1).jpg";
-import winelandsImage from "@/assets/winelands.jpg";
+import winelandsImage from "@/assets/nenad-gataric-2GZvGZh4dJc-unsplash.jpg";
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
 import heroThingsImage from "@/assets/things.jpg";
+import hikingImage from "@/assets/hiking.jpg";
+import ghanaImage from "@/assets/devon-janse-van-rensburg-RAAXmcYdoIg-unsplash.jpg";
 
 const ThingsToDo = () => {
   const activities = [
@@ -21,7 +23,7 @@ const ThingsToDo = () => {
     {
       title: "Hiking Adventures",
       description: "Conquer Table Mountain, Lion's Head, or Chapman's Peak. Experience breathtaking views and diverse trails for all fitness levels.",
-      image: capePointImage,
+      image: hikingImage,
       duration: "2-8 hours",
       location: "Cape Peninsula",
       groupSize: "Small groups",
@@ -55,7 +57,7 @@ const ThingsToDo = () => {
     {
       title: "Cultural Experiences",
       description: "Explore Township tours, Bo-Kaap heritage walks, Robben Island Museum, and local markets showcasing Cape Town's diverse culture.",
-      image: campsBayImage,
+      image: ghanaImage,
       duration: "2-6 hours",
       location: "City & townships",
       groupSize: "Small to medium groups",
