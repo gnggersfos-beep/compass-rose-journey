@@ -1,5 +1,8 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ navigation hook
 import { Button } from "@/components/ui/button";
 import { MessageCircle, ArrowDown } from "lucide-react";
+import BookingDialog from "@/components/booking/BookingDialog"; // ✅ ensure this path is correct
 
 interface HeroProps {
   title: string;
@@ -24,14 +27,13 @@ const Hero = ({
   height = "full",
   overlay = true,
 }: HeroProps) => {
+  const [showBooking, setShowBooking] = useState(false);
+  const navigate = useNavigate(); // ✅ create navigation instance
+
   const heightClasses = {
     full: "h-screen",
     large: "h-[600px] md:h-[700px]",
     medium: "h-[400px] md:h-[500px]",
-  };
-
-  const handleWhatsApp = () => {
-    window.open("https://wa.me/27625803352", "_blank");
   };
 
   const scrollToContent = () => {
@@ -42,16 +44,14 @@ const Hero = ({
     <section
       className={`relative ${heightClasses[height]} flex items-center justify-center overflow-hidden`}
     >
-      {/* Background Image with Parallax Effect */}
+      {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110 transition-transform duration-1000"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       />
 
       {/* Overlay */}
-      {overlay && (
-        <div className="absolute inset-0 bg-gradient-overlay" />
-      )}
+      {overlay && <div className="absolute inset-0 bg-gradient-overlay" />}
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground">
@@ -60,31 +60,40 @@ const Hero = ({
             {subtitle}
           </p>
         )}
-        
+
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-up">
           {title}
         </h1>
-        
+
         {description && (
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-90 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <p
+            className="text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-90 animate-fade-up"
+            style={{ animationDelay: "0.2s" }}
+          >
             {description}
           </p>
         )}
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{ animationDelay: "0.4s" }}>
+        {/* Buttons */}
+        <div
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up"
+          style={{ animationDelay: "0.4s" }}
+        >
+          {/* ✅ Book Now Button */}
           <Button
             variant="hero"
             size="lg"
-            onClick={primaryButtonAction || handleWhatsApp}
+            onClick={() => setShowBooking(true)}
           >
             {primaryButtonText}
           </Button>
-          
+
+          {/* ✅ Contact Us Button */}
           {showSecondaryButton && (
             <Button
               variant="outline"
               size="lg"
-              onClick={handleWhatsApp}
+              onClick={() => navigate("/contact")} // 👈 link to contact page
               className="border-2 border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary"
             >
               <MessageCircle className="w-5 h-5" />
@@ -104,6 +113,13 @@ const Hero = ({
           <ArrowDown className="w-8 h-8" />
         </button>
       )}
+
+      {/* ✅ Booking Dialog */}
+      <BookingDialog
+        open={showBooking}
+        onOpenChange={setShowBooking}
+        defaultTour="custom-tour"
+      />
     </section>
   );
 };
