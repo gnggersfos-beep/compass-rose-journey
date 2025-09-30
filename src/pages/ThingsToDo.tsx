@@ -3,7 +3,7 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import TourCard from "@/components/sections/TourCard";
 import campsBayImage from "@/assets/camps-bay.jpg";
-import capePointImage from "@/assets/cape-point.jpg";
+import capePointImage from "@/assets/pexels-dkeats-34090435 (1).jpg";
 import winelandsImage from "@/assets/winelands.jpg";
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
 import heroThingsImage from "@/assets/things.jpg";
