@@ -11,6 +11,7 @@ import ThingsToDo from "./pages/ThingsToDo";
 import AreasToStay from "./pages/AreasToStay";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
+import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
 
 // Service Pages
@@ -34,6 +35,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />

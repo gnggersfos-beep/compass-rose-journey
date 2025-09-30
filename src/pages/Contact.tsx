@@ -32,12 +32,8 @@ Preferred Date: ${formData.date}
 Tour Interest: ${formData.tourInterest}
 Message: ${formData.message}`;
     
-    window.open(
-      `https://wa.me/27625803352?text=${encodeURIComponent(whatsappMessage)}`,
-      "_blank"
-    );
-    
-    toast.success("Redirecting to WhatsApp...");
+
+    toast.success("Message Sent");
   };
 
   const handleChange = (
@@ -202,7 +198,7 @@ Message: ${formData.message}`;
                 <div className="flex gap-3">
                   <Button type="submit" className="flex-1">
                     <MessageCircle className="w-4 h-4" />
-                    Send via WhatsApp
+                    Send via Email
                   </Button>
                   <Button type="button" variant="outline" onClick={() => window.location.href = "tel:+27625803352"}>
                     <Phone className="w-4 h-4" />
