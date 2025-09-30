@@ -6,12 +6,25 @@ import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 import heroGalImage from "@/assets/boa.jpg";
-import campsBayImage from "@/assets/camps-bay.jpg";
-import boKaapImage from "@/assets/bo-kaap.jpg";
-import vaWaterfrontImage from "@/assets/va-waterfront.jpg";
-import capePointImage from "@/assets/cape-point.jpg";
-import winelandsImage from "@/assets/winelands.jpg";
+import campsBayImage from "@/assets/44.jpg";
+import boKaapImage from "@/assets/loyiso-mali-5oYjOEsK0iw-unsplash.jpg";
+import vaWaterfrontImage from "@/assets/waterfront.jpg";
+import capePointImage from "@/assets/pexels-jeferson-eduardo-araujo-1128466699-28120661.jpg";
+import winelandsImage from "@/assets/Wines.jpg";
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
+import campBayImage from "@/assets/timo-wielink-jvOFvRzVCx4-unsplash.jpg";
+import abImage from "@/assets/janan-OoW1DMDCV1Y-unsplash.jpg";
+import acImage from "@/assets/pexels-fotios-photos-34027070.jpg";
+import adImage from "@/assets/ad.jpg";
+import aeImage from "@/assets/ae.jpg";
+import afImage from "@/assets/af.jpg";
+import agImage from "@/assets/ag.jpg";
+import printImage from "@/assets/print.jpg";
+import pexelsImage from "@/assets/pexels-dorota-semla-1929451-8912045.jpg";
+import tomImage from "@/assets/thomas-bennie-B21WLsX6a5c-unsplash.jpg";
+import ajImage from "@/assets/pexels-jayscape-artist-12344305.jpg";
+import desImage from "@/assets/pexels-naimbic-2030037.jpg";
+import thingsImage from "@/assets/things.jpg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<{ src: string; title: string; category: string } | null>(null);
@@ -56,7 +69,7 @@ const Gallery = () => {
       category: "Adventures",
     },
     {
-      src: campsBayImage,
+      src: campBayImage,
       title: "Coastal Paradise",
       category: "Beaches",
     },
@@ -65,6 +78,66 @@ const Gallery = () => {
       title: "Mountain Majesty",
       category: "Landscapes",
     },
+    {
+      src: abImage,
+      title: "Sun-Kissed Shores",
+      category: "Beaches",
+    },
+    {
+      src: acImage,
+      title: "Vibrant Streets", 
+      category: "City Life",
+    },
+    {
+      src: adImage,
+      title: "Harbor Lights",
+      category: "City Life",
+    },
+    {
+      src: aeImage,
+      title: "Ocean's Edge",
+      category: "Landscapes", 
+    }, 
+    {
+      src: afImage,
+      title: "Vineyard Views",
+      category: "Wine Country",
+    },
+    {
+      src: agImage,
+
+      title: "Dune Adventures",
+      category: "Adventures",
+    },
+      {
+    src: printImage,
+    title: "Wine Tasting",
+    category: "Wine Country",
+  },
+  {
+    src: pexelsImage,
+    title: "Bo-Kaap Colors",
+    category: "City Life",
+  },
+  {
+    src: tomImage,
+    title: "Mountain Hike",
+    category: "Adventures",
+  },
+  {
+    src: ajImage,
+    title: "Lighthouse at Cape Point",
+    category: "Landscapes",
+  },
+  {src 
+    : desImage,
+    title: "Cape Town Apartments",
+    category: "City Life",
+  },
+  {src : thingsImage,
+    title: "Adventure Activities",
+    category: "Adventures",
+  }
   ];
 
   const filteredImages = selectedCategory === "All" 
