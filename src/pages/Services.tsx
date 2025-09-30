@@ -3,7 +3,7 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Plane, MapIcon, Wine, Mountain, Users, Car } from "lucide-react";
+import { Plane, MapIcon, Wine, Mountain, Users, Car, Image } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroServiceImage from "@/assets/services.jpg";
 import winelandsImage from "@/assets/winelands.jpg";
@@ -19,7 +19,7 @@ import newImage from "@/assets/new.jpg";
 const Services = () => {
   const services = [
     {
-        image: shuttleImage,
+      image : shuttleImage,
     title: "Airport Transfers",
     description:
       "Comfortable, reliable transfers between Cape Town International Airport and your accommodation. Professional drivers and luxury vehicles.",
@@ -33,10 +33,9 @@ const Services = () => {
     link: "/services/airport-transfers",
   },
     {
-      icon: <MapIcon className="w-12 h-12 text-primary" />,
+      image: capePointImage,
       title: "Custom Tours",
       description: "Personalized itineraries designed around your interests, schedule, and budget. Experience Cape Town your way with our expert local guides.",
-      image: capePointImage,
       features: [
         "Tailored experiences",
         "Flexible scheduling",
@@ -47,10 +46,9 @@ const Services = () => {
       link: "/services/custom-tours",
     },
     {
-      icon: <Wine className="w-12 h-12 text-primary" />,
+      image: winelandsImage,
       title: "Wine Tours",
       description: "Explore world-renowned wine regions including Stellenbosch, Franschhoek, and Constantia. Taste exceptional wines and enjoy gourmet pairings.",
-      image: winelandsImage,
       features: [
         "Premium wine estates",
         "Cellar tours",
@@ -61,10 +59,9 @@ const Services = () => {
       link: "/services/wine-tours",
     },
     {
-      icon: <Mountain className="w-12 h-12 text-primary" />,
+      image: atlantisDunesImage,
       title: "Adventure Trips",
       description: "Adrenaline-pumping activities including sandboarding, shark cage diving, paragliding, and more. Perfect for thrill-seekers.",
-      image: atlantisDunesImage,
       features: [
         "Professional equipment",
         "Safety certified",
@@ -75,10 +72,9 @@ const Services = () => {
       link: "/services/adventure-trips",
     },
     {
-      icon: <Users className="w-12 h-12 text-primary" />,
+      image: capePointImage,
       title: "Group Packages",
       description: "Special rates and customized experiences for families, corporate groups, and large parties. Team building and events catering available.",
-      image: capePointImage,
       features: [
         "Discounted group rates",
         "Event coordination",
@@ -89,10 +85,9 @@ const Services = () => {
       link: "/services/group-packages",
     },
     {
-      icon: <Car className="w-12 h-12 text-primary" />,
+      image: heroServiceImage,
       title: "Private Shuttles",
       description: "Comfortable transportation for any occasion. Point-to-point service, day trips, or multi-day tours with professional drivers.",
-      image: heroServiceImage,
       features: [
         "Clean, modern vehicles",
         "Professional chauffeurs",
@@ -145,7 +140,13 @@ const Services = () => {
                 <div className="relative h-48 overflow-hidden bg-gradient-ocean">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-primary-foreground group-hover:scale-110 transition-transform duration-500">
-                      {service.icon}
+                     {service.image }
+        <img
+          src={service.image}
+          alt={service.title}
+          className="w-full h-full object-cover"
+        />
+                  
                     </div>
                   </div>
                 </div>
