@@ -7,7 +7,7 @@ import FloatingBookButton from "@/components/booking/FloatingBookButton";
 import { Card } from "@/components/ui/card";
 import heroImage from "@/assets/hero-table-mountain.jpg";
 import heroAboutImage from "@/assets/abouts.jpg";
-import capePointImage from "@/assets/cape-point.jpg";
+import capePointImage from "@/assets/pexels-jayscape-artist-12344305.jpg";
 import winelandsImage from "@/assets/Wines.jpg";
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
 import campsBayImage from "@/assets/campss.jpg";
