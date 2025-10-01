@@ -14,6 +14,8 @@ import campsBayImage from "@/assets/campss.jpg";
 import boKaapImage from "@/assets/bo-kaap.jpg";
 import vaWaterfrontImage from "@/assets/print.jpg";
 import { MapPin, Calendar, Users, Compass } from "lucide-react";
+import Reviews from "@/components/sections/Reviews";
+
 
 const Index = () => {
   const featuredTours = [
@@ -172,6 +174,7 @@ const Index = () => {
             </p>
           </div>
           
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <Card
@@ -189,6 +192,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      <Reviews />
 
       {/* CTA Section */}
       <section className="py-20 bg-muted/30">
