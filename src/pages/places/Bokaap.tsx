@@ -53,8 +53,8 @@ const CampsBay = () => {
         <div className="absolute inset-0 bg-gradient-overlay" />
         <div className="absolute inset-0 flex items-center justify-center text-primary-foreground text-center px-4">
           <div className="max-w-3xl animate-fade-up">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">Camps Bay</h1>
-            <p className="text-xl md:text-2xl opacity-90">Cape Town's Most Glamorous Beach Suburb</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Bo Kaap</h1>
+            <p className="text-xl md:text-2xl opacity-90">Cape Town's Most Colorful Neighbourhood</p>
           </div>
         </div>
       </div>
