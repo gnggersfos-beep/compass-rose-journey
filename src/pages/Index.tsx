@@ -206,7 +206,7 @@ const Index = () => {
               Contact us today to plan your perfect Cape Town experience. Our team is ready to help you create unforgettable memories.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/27625803352" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/27781275522" target="_blank" rel="noopener noreferrer">
                 <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-success text-success-foreground hover:bg-success/90 shadow-md hover:shadow-lg hover:scale-105 h-14 rounded-lg px-10 text-base">
                   Book Your Tour
                 </button>

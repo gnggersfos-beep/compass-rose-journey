@@ -84,7 +84,7 @@ const AirportTransfers = () => {
               <Button 
                 variant="whatsapp" 
                 size="lg"
-                onClick={() => window.open("https://wa.me/27625803352?text=" + encodeURIComponent("I'd like to book an airport transfer"), "_blank")}
+                onClick={() => window.open("https://wa.me/27781275522?text=" + encodeURIComponent("I'd like to book an airport transfer"), "_blank")}
               >
                 WhatsApp Us
               </Button>

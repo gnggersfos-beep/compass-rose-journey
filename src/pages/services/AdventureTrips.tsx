@@ -129,7 +129,7 @@ const AdventureTrips = () => {
               <Button 
                 variant="whatsapp" 
                 size="lg"
-                onClick={() => window.open("https://wa.me/27625803352?text=" + encodeURIComponent("I'm interested in adventure activities"), "_blank")}
+                onClick={() => window.open("https://wa.me/27781275522?text=" + encodeURIComponent("I'm interested in adventure activities"), "_blank")}
               >
                 WhatsApp Us
               </Button>

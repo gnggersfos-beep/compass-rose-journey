@@ -250,7 +250,7 @@ const Gallery = () => {
             These are just glimpses of what awaits you. Book your Cape Town adventure and capture your own unforgettable moments.
           </p>
           <button
-            onClick={() => window.open("https://wa.me/27625803352", "_blank")}
+            onClick={() => window.open("https://wa.me/27781275522", "_blank")}
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary-foreground text-primary hover:opacity-90 shadow-xl hover:shadow-2xl hover:scale-105 text-base font-semibold h-14 rounded-lg px-10 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >

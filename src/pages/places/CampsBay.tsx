@@ -118,7 +118,7 @@ const CampsBay = () => {
                 <Button 
                   variant="outline"
                   className="w-full border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-                  onClick={() => window.open("https://wa.me/27625803352?text=" + encodeURIComponent("I'd like to visit Camps Bay"), "_blank")}
+                  onClick={() => window.open("https://wa.me/27781275522?text=" + encodeURIComponent("I'd like to visit Camps Bay"), "_blank")}
                 >
                   WhatsApp Us
                 </Button>

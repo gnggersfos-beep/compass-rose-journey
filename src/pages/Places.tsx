@@ -73,7 +73,7 @@ const Places = () => {
   const handleBookNow = (placeName: string) => {
     const message = `Hi! I'd like to learn more about visiting ${placeName}. Can you provide information about tours?`;
     window.open(
-      `https://wa.me/27625803352?text=${encodeURIComponent(message)}`,
+      `https://wa.me/27781275522?text=${encodeURIComponent(message)}`,
       "_blank"
     );
   };
@@ -177,7 +177,7 @@ const Places = () => {
           <Button
             variant="hero"
             size="lg"
-            onClick={() => window.open("https://wa.me/27625803352", "_blank")}
+            onClick={() => window.open("https://wa.me/27781275522", "_blank")}
             className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >

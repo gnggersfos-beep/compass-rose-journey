@@ -54,7 +54,7 @@ Message: ${formData.message}`;
         height="medium"
         showSecondaryButton={false}
         primaryButtonText="Call Us Now"
-        primaryButtonAction={() => window.location.href = "tel:+27625803352"}
+        primaryButtonAction={() => window.location.href = "tel:+27781275522"}
       />
 
       {/* Contact Info & Form Section */}
@@ -70,7 +70,7 @@ Message: ${formData.message}`;
                 <div>
                   <h3 className="font-semibold mb-2">Phone</h3>
                   <a
-                    href="tel:+27625803352"
+                    href="tel:+27781275522"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     +27 62 580 3352
@@ -200,7 +200,7 @@ Message: ${formData.message}`;
                     <MessageCircle className="w-4 h-4" />
                     Send via Email
                   </Button>
-                  <Button type="button" variant="outline" onClick={() => window.location.href = "tel:+27625803352"}>
+                  <Button type="button" variant="outline" onClick={() => window.location.href = "tel:+27781275522"}>
                     <Phone className="w-4 h-4" />
                     Call
                   </Button>

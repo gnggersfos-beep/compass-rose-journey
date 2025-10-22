@@ -79,7 +79,7 @@ const AreasToStay = () => {
   const handleContactForBooking = (areaName: string) => {
     const message = `Hi! I'm looking for accommodation recommendations in ${areaName}. Can you help?`;
     window.open(
-      `https://wa.me/27625803352?text=${encodeURIComponent(message)}`,
+      `https://wa.me/27781275522?text=${encodeURIComponent(message)}`,
       "_blank"
     );
   };

@@ -41,7 +41,7 @@ Date: ${date ? format(date, "PPP") : "Not specified"}
 Notes: ${formData.notes}`;
 
     // Open WhatsApp
-    window.open(`https://wa.me/27625803352?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/27781275522?text=${encodeURIComponent(message)}`, "_blank");
     
     // Show success message
     toast({

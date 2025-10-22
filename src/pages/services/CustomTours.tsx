@@ -93,7 +93,7 @@ const CustomTours = () => {
               <Button 
                 variant="whatsapp" 
                 size="lg"
-                onClick={() => window.open("https://wa.me/27625803352?text=" + encodeURIComponent("I'd like to plan a custom tour"), "_blank")}
+                onClick={() => window.open("https://wa.me/27781275522?text=" + encodeURIComponent("I'd like to plan a custom tour"), "_blank")}
               >
                 Chat on WhatsApp
               </Button>

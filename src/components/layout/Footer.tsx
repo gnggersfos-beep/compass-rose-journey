@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 
 const Footer = () => {
   const handleWhatsApp = () => {
-    window.open("https://wa.me/27625803352", "_blank");
+    window.open("https://wa.me/27781275522", "_blank");
   };
 
   const scrollToTop = () => {
@@ -119,7 +119,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 text-sm opacity-90">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <a href="tel:+27625803352" className="hover:opacity-100">
+                <a href="tel:+27781275522" className="hover:opacity-100">
                   +27 62 580 3352
                 </a>
               </li>

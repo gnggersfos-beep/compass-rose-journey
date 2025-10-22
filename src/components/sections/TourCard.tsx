@@ -27,7 +27,7 @@ const TourCard = ({
   const handleWhatsApp = () => {
     const message = `Hi! I'm interested in the ${title} tour. Can you provide more information?`;
     window.open(
-      `https://wa.me/27625803352?text=${encodeURIComponent(message)}`,
+      `https://wa.me/27781275522?text=${encodeURIComponent(message)}`,
       "_blank"
     );
   };

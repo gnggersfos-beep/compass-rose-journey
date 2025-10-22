@@ -49,7 +49,7 @@ const CampsBay = () => {
       
       {/* Hero Section */}
       <div className="relative h-[60vh] overflow-hidden">
-        <img src={boKaapImage} alt="Camps Bay" className="w-full h-full object-cover" />
+        <img src={boKaapImage} alt="Bo-Kaap" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-overlay" />
         <div className="absolute inset-0 flex items-center justify-center text-primary-foreground text-center px-4">
           <div className="max-w-3xl animate-fade-up">
@@ -129,7 +129,7 @@ Bo-Kaap is more than a tourist destination—it is a living, breathing heritage 
                 <Button 
                   variant="outline"
                   className="w-full border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-                  onClick={() => window.open("https://wa.me/27625803352?text=" + encodeURIComponent("I'd like to visit Camps Bay"), "_blank")}
+                  onClick={() => window.open("https://wa.me/27781275522?text=" + encodeURIComponent("I'd like to visit Camps Bay"), "_blank")}
                 >
                   WhatsApp Us
                 </Button>

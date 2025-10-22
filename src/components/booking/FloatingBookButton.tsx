@@ -8,7 +8,7 @@ const FloatingBookButton = () => {
   const [showOptions, setShowOptions] = useState(false);
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/27625803352", "_blank");
+    window.open("https://wa.me/27781275522", "_blank");
   };
 
   return (

@@ -28,11 +28,11 @@ const Header = () => {
   ];
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/27625803352", "_blank");
+    window.open("https://wa.me/27781275522", "_blank");
   };
 
   const handleCall = () => {
-    window.location.href = "tel:+27625803352";
+    window.location.href = "tel:+27781275522";
   };
 
   return (
