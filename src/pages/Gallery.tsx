@@ -8,7 +8,7 @@ import { X } from "lucide-react";
 import heroGalImage from "@/assets/boa.jpg";
 import campsBayImage from "@/assets/44.jpg";
 import boKaapImage from "@/assets/loyiso-mali-5oYjOEsK0iw-unsplash.jpg";
-import vaWaterfrontImage from "@/assets/waterfront.jpg";
+import vaWaterfrontImage from "@/assets/Waterfront.jpg";
 import capePointImage from "@/assets/pexels-jeferson-eduardo-araujo-1128466699-28120661.jpg";
 import winelandsImage from "@/assets/Wines.jpg";
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
