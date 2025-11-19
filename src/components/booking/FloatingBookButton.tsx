@@ -26,22 +26,17 @@ const FloatingBookButton = () => {
               <Calendar className="mr-2 h-5 w-5" />
               Book Now
             </Button>
-            <Button
-              onClick={handleWhatsApp}
-              className="bg-success text-success-foreground hover:bg-success/90 shadow-xl hover:shadow-2xl hover:scale-110 transition-all"
-              size="lg"
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              WhatsApp
-            </Button>
           </div>
         )}
 
         {/* Toggle button */}
         <button
-          onMouseEnter={() => setShowOptions(true)}
-          onMouseLeave={() => setShowOptions(false)}
-          onClick={() => setShowOptions(!showOptions)}
+          onClick={() => {
+            setShowOptions(!showOptions);
+            if (!showOptions) {
+              setTimeout(() => setShowOptions(false), 6000);
+            }
+          }}
           className="w-16 h-16 rounded-full bg-gradient-ocean text-primary-foreground shadow-2xl hover:shadow-3xl hover:scale-110 transition-all flex items-center justify-center animate-float"
           aria-label="Contact options"
         >

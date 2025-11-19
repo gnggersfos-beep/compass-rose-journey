@@ -30,25 +30,25 @@ const BookingDialog = ({ open, onOpenChange, defaultTour }: BookingDialogProps) 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Create WhatsApp message
-    const message = `New Booking Request:
-Name: ${formData.name}
+
+    // Create Email body
+    const subject = `Booking Request: ${formData.tourType}`;
+    const body = `Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
 Tour: ${formData.tourType}
 Date: ${date ? format(date, "PPP") : "Not specified"}
 Notes: ${formData.notes}`;
 
-    // Open WhatsApp
-    window.open(`https://wa.me/27781275522?text=${encodeURIComponent(message)}`, "_blank");
-    
+    // Open Email Client
+    window.location.href = `mailto:info@compasrose.travel?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     // Show success message
     toast({
-      title: "Booking Request Sent!",
-      description: "We'll get back to you shortly via WhatsApp.",
+      title: "Opening Email Client...",
+      description: "Please send the email to complete your request.",
     });
-    
+
     // Reset form
     setFormData({ name: "", email: "", phone: "", tourType: "", notes: "" });
     setDate(undefined);
@@ -64,7 +64,7 @@ Notes: ${formData.notes}`;
             Fill in your details and we'll get back to you shortly to confirm your booking
           </DialogDescription>
         </DialogHeader>
-        
+
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <div className="space-y-2">
             <Label htmlFor="name">Full Name *</Label>
