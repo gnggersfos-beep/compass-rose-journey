@@ -6,18 +6,20 @@ import PartnerCarousel from "@/components/sections/PartnerCarousel";
 import FloatingBookButton from "@/components/booking/FloatingBookButton";
 import { Card } from "@/components/ui/card";
 import heroImage from "@/assets/hero-table-mountain.jpg";
-import heroAboutImage from "@/assets/abouts.jpg";
 import capePointImage from "@/assets/pexels-jayscape-artist-12344305.jpg";
 import winelandsImage from "@/assets/Wines.jpg";
 import atlantisDunesImage from "@/assets/atlantis-dunes.jpg";
 import campsBayImage from "@/assets/campss.jpg";
 import boKaapImage from "@/assets/bo-kaap.jpg";
 import vaWaterfrontImage from "@/assets/print.jpg";
-import { MapPin, Calendar, Users, Compass } from "lucide-react";
+import { MapPin, Calendar, Users, Compass, ArrowRight } from "lucide-react";
 import Reviews from "@/components/sections/Reviews";
-
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   const featuredTours = [
     {
       title: "Cape Point Adventure",
@@ -26,7 +28,6 @@ const Index = () => {
       duration: "Full Day (8-9 hours)",
       location: "Cape Peninsula",
       groupSize: "Small groups (2-8 people)",
-      price: "From R1,200",
     },
     {
       title: "Winelands Experience",
@@ -35,7 +36,6 @@ const Index = () => {
       duration: "Full Day (8 hours)",
       location: "Stellenbosch & Franschhoek",
       groupSize: "Private & Group tours",
-      price: "From R1,400",
     },
     {
       title: "Atlantis Dunes Safari",
@@ -44,7 +44,6 @@ const Index = () => {
       duration: "Half Day (4 hours)",
       location: "West Coast",
       groupSize: "Groups up to 12",
-      price: "From R900",
     },
   ];
 
@@ -92,7 +91,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <Hero
         title="Discover Cape Town"
@@ -110,7 +109,7 @@ const Index = () => {
               Explore our most popular adventures and create memories that last a lifetime
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredTours.map((tour, index) => (
               <div
@@ -134,7 +133,7 @@ const Index = () => {
               Discover the vibrant neighborhoods and iconic landmarks that make Cape Town unique
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {areas.map((area, index) => (
               <a
@@ -173,8 +172,7 @@ const Index = () => {
               We're committed to providing exceptional experiences with personalized service
             </p>
           </div>
-          
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <Card
@@ -192,30 +190,38 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+
       <Reviews />
 
-      {/* CTA Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto animate-fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Start Your Adventure?
+      {/* CTA Section - Large & Bold (Preserved) */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-muted/50" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-4xl mx-auto animate-scale-in">
+            <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight text-foreground">
+              Ready to Start <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Your Adventure?</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light">
               Contact us today to plan your perfect Cape Town experience. Our team is ready to help you create unforgettable memories.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a href="https://wa.me/27781275522" target="_blank" rel="noopener noreferrer">
-                <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-success text-success-foreground hover:bg-success/90 shadow-md hover:shadow-lg hover:scale-105 h-14 rounded-lg px-10 text-base">
-                  Book Your Tour
-                </button>
+                <Button size="lg" className="h-16 px-10 text-lg rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 bg-success hover:bg-success/90 text-white">
+                  Book Your Tour Now
+                </Button>
               </a>
-              <a href="/contact">
-                <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground h-14 rounded-lg px-10 text-base">
-                  Get In Touch
-                </button>
-              </a>
+              <Button
+                variant="outline"
+                size="lg"
+                className="h-16 px-10 text-lg rounded-full border-2 hover:bg-primary/5"
+                onClick={() => navigate('/contact')}
+              >
+                Get In Touch
+              </Button>
             </div>
           </div>
         </div>

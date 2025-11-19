@@ -2,8 +2,10 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import { Card } from "@/components/ui/card";
+import GlassCard from "@/components/ui/GlassCard";
 import { Heart, Users, Award, Leaf } from "lucide-react";
 import heroAboutImage from "@/assets/abouts.jpg";
+import founderImage from "@/assets/founder-real.jpg";
 
 const About = () => {
   const values = [
@@ -32,7 +34,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <Hero
         title="About Compass Rose Travel"
         subtitle="Our Story"
@@ -43,13 +45,62 @@ const About = () => {
         primaryButtonText="Contact Us"
       />
 
+      {/* Founder Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-ocean opacity-5 pointer-events-none" />
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="w-full lg:w-1/2 relative animate-fade-in">
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+                <img
+                  src={founderImage}
+                  alt="Leroy - Founder of Compass Rose Travel"
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-secondary/30 rounded-full blur-3xl -z-10" />
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/30 rounded-full blur-3xl -z-10" />
+            </div>
+
+            <div className="w-full lg:w-1/2">
+              <GlassCard className="p-8 md:p-12 animate-slide-in-right">
+                <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary/10 text-primary font-medium text-sm tracking-wide uppercase">
+                  Meet the Founder
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-dark">
+                  Leroy
+                </h2>
+                <h3 className="text-xl text-muted-foreground mb-8 font-light italic">
+                  "Travel is the only thing you buy that makes you richer."
+                </h3>
+
+                <div className="prose prose-lg text-muted-foreground">
+                  <p className="mb-6">
+                    For over two decades, Leroy has been the heartbeat of Compass Rose Travel. His journey began not in a boardroom, but on the vibrant streets of Cape Town, where he discovered his profound love for connecting people with the soul of his city.
+                  </p>
+                  <p>
+                    "I wanted to create something that wasn't just about sightseeing," Leroy explains. "It had to be about <em>feeling</em>. When you leave Cape Town, I want you to feel like you're leaving a piece of your heart behind, knowing you'll return to reclaim it."
+                  </p>
+                </div>
+
+                <div className="mt-10 flex items-center gap-4">
+                  <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
+                  <span className="font-handwriting text-2xl text-primary rotate-[-5deg]">Leroy</span>
+                  <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
+                </div>
+              </GlassCard>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Story Section */}
-      <section className="py-20">
+      < section className="py-20" >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-3xl font-bold mb-6 text-foreground">The Journey Began with a Vision</h2>
-              
+
               <p className="text-muted-foreground mb-6">
                 Compass Rose Travel was founded on a simple but powerful idea: everyone deserves to experience the breathtaking beauty and rich culture of Cape Town in an authentic, meaningful way. What started as a passion project by a group of local Cape Town enthusiasts has grown into a premier travel company dedicated to creating unforgettable experiences.
               </p>
@@ -59,7 +110,7 @@ const About = () => {
               </p>
 
               <h3 className="text-2xl font-bold mt-12 mb-6 text-foreground">Why Cape Town?</h3>
-              
+
               <p className="text-muted-foreground mb-6">
                 Cape Town isn't just our workplace—it's our home, our heritage, and our heart. From the majestic Table Mountain standing guard over the city to the pristine beaches where the Atlantic and Indian Oceans meet, from the colorful streets of Bo-Kaap to the world-renowned winelands, every corner of this region tells a story.
               </p>
@@ -69,7 +120,7 @@ const About = () => {
               </p>
 
               <h3 className="text-2xl font-bold mt-12 mb-6 text-foreground">Our Commitment to You</h3>
-              
+
               <p className="text-muted-foreground mb-6">
                 We understand that travel is about more than seeing sights—it's about creating memories, forming connections, and broadening perspectives. That's why we go beyond the standard tourist experience. Our tours are carefully crafted to balance must-see attractions with authentic local experiences, giving you a true taste of Cape Town life.
               </p>
@@ -79,7 +130,7 @@ const About = () => {
               </p>
 
               <h3 className="text-2xl font-bold mt-12 mb-6 text-foreground">Community and Sustainability</h3>
-              
+
               <p className="text-muted-foreground mb-6">
                 As proud Cape Town locals, we believe in giving back to our community and protecting the natural beauty that draws visitors from around the world. We partner with local businesses, from family-owned restaurants to small craft workshops, ensuring tourism benefits the people who call this place home.
               </p>
@@ -89,7 +140,7 @@ const About = () => {
               </p>
 
               <h3 className="text-2xl font-bold mt-12 mb-6 text-foreground">Meet Our Team</h3>
-              
+
               <p className="text-muted-foreground mb-6">
                 Our guides aren't just knowledgeable—they're storytellers, photographers, naturalists, and historians who bring Cape Town's past and present to life. Each team member has been carefully selected not only for their expertise but for their genuine love of sharing Cape Town with others.
               </p>
@@ -99,7 +150,7 @@ const About = () => {
               </p>
 
               <h3 className="text-2xl font-bold mt-12 mb-6 text-foreground">Your Adventure Awaits</h3>
-              
+
               <p className="text-muted-foreground mb-6">
                 Whether you're a first-time visitor wanting to see the highlights or a returning guest looking to explore deeper, we're here to make your Cape Town experience exceptional. We offer flexibility in our tours, can accommodate special requests, and are always happy to customize itineraries to match your interests and schedule.
               </p>
@@ -110,10 +161,10 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Values Section */}
-      <section className="py-20 bg-muted/30">
+      < section className="py-20 bg-muted/30" >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Core Values</h2>
@@ -136,10 +187,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       <Footer />
-    </div>
+    </div >
   );
 };
 

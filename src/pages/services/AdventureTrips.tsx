@@ -87,7 +87,7 @@ const AdventureTrips = () => {
                     <p className="text-muted-foreground mb-4">{adventure.description}</p>
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-muted-foreground">{adventure.duration}</span>
-                      <span className="font-bold text-primary">{adventure.price}</span>
+                      
                     </div>
                   </div>
                 </div>
