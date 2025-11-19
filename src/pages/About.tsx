@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import GlassCard from "@/components/ui/GlassCard";
 import { Heart, Users, Award, Leaf } from "lucide-react";
 import heroAboutImage from "@/assets/abouts.jpg";
-import founderImage from "@/assets/founder-real.jpg";
+import founderImage from "@/assets/THAMANI ASHMA PRESENTS.png";
 
 const About = () => {
   const values = [
