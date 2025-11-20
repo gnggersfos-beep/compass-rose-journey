@@ -8,8 +8,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react";
 import { useState } from "react";
-import { toast } from "sonner";
 import campsBaImage from "@/assets/paul-macallan-idXrcOsU1xc-unsplash.jpg";
+import { format } from "date-fns";
+import { toast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,23 +18,69 @@ const Contact = () => {
     email: "",
     phone: "",
     date: "",
-    tourInterest: "",
-    message: "",
+    tourType: "",
+    notes: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Format message for WhatsApp
-    const whatsappMessage = `New Inquiry from ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Preferred Date: ${formData.date}
-Tour Interest: ${formData.tourInterest}
-Message: ${formData.message}`;
-    
 
-    toast.success("Message Sent");
+    const formattedDate = formData.date
+      ? format(new Date(formData.date), "PPP")
+      : undefined;
+
+    try {
+      const res = await fetch(
+        "https://backend-seven-eosin-31.vercel.app/api/sendMail",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            tourType: formData.tourType,
+            notes: formData.notes,
+            date: formattedDate || null,
+          }),
+        }
+      );
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        // Show success message
+        toast({
+          title: "Message Sent!!!",
+          description: "We'll get back to you as soon as possible.",
+          variant: "default",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          tourType: "",
+          date: "",
+          notes: "",
+        });
+      } else {
+        console.log(
+          res.status,
+          " ",
+          data.error || "failed to send booking request"
+        );
+      }
+    } catch (err) {
+      toast({
+        title: "Error",
+        description: err.message || "Something went wrong.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (
@@ -45,7 +92,7 @@ Message: ${formData.message}`;
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <Hero
         title="Get In Touch"
         subtitle="Contact Us"
@@ -54,7 +101,7 @@ Message: ${formData.message}`;
         height="medium"
         showSecondaryButton={false}
         primaryButtonText="Call Us Now"
-        primaryButtonAction={() => window.location.href = "tel:+27781275522"}
+        primaryButtonAction={() => (window.location.href = "tel:+27781275522")}
       />
 
       {/* Contact Info & Form Section */}
@@ -79,7 +126,10 @@ Message: ${formData.message}`;
               </div>
             </Card>
 
-            <Card className="p-6 hover:shadow-xl transition-all animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            <Card
+              className="p-6 hover:shadow-xl transition-all animate-fade-up"
+              style={{ animationDelay: "0.1s" }}
+            >
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-lg bg-primary/10">
                   <Mail className="w-6 h-6 text-primary" />
@@ -96,7 +146,10 @@ Message: ${formData.message}`;
               </div>
             </Card>
 
-            <Card className="p-6 hover:shadow-xl transition-all animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <Card
+              className="p-6 hover:shadow-xl transition-all animate-fade-up"
+              style={{ animationDelay: "0.2s" }}
+            >
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-lg bg-primary/10">
                   <MapPin className="w-6 h-6 text-primary" />
@@ -104,7 +157,8 @@ Message: ${formData.message}`;
                 <div>
                   <h3 className="font-semibold mb-2">Address</h3>
                   <p className="text-muted-foreground">
-                    Frizita Business Complex<br />
+                    Frizita Business Complex
+                    <br />
                     Cape Town, 7441
                   </p>
                 </div>
@@ -170,11 +224,11 @@ Message: ${formData.message}`;
                 </div>
 
                 <div>
-                  <Label htmlFor="tourInterest">Tour of Interest</Label>
+                  <Label htmlFor="tourType">Tour of Interest</Label>
                   <Input
-                    id="tourInterest"
-                    name="tourInterest"
-                    value={formData.tourInterest}
+                    id="tourType"
+                    name="tourType"
+                    value={formData.tourType}
                     onChange={handleChange}
                     placeholder="e.g., Cape Point, Winelands, Custom Tour"
                     className="mt-2"
@@ -182,12 +236,12 @@ Message: ${formData.message}`;
                 </div>
 
                 <div>
-                  <Label htmlFor="message">Message *</Label>
+                  <Label htmlFor="notes">Message *</Label>
                   <Textarea
-                    id="message"
-                    name="message"
+                    id="notes"
+                    name="notes"
                     required
-                    value={formData.message}
+                    value={formData.notes}
                     onChange={handleChange}
                     placeholder="Tell us about your travel plans and preferences..."
                     rows={5}
@@ -200,7 +254,11 @@ Message: ${formData.message}`;
                     <MessageCircle className="w-4 h-4" />
                     Send via Email
                   </Button>
-                  <Button type="button" variant="outline" onClick={() => window.location.href = "tel:+27781275522"}>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => (window.location.href = "tel:+27781275522")}
+                  >
                     <Phone className="w-4 h-4" />
                     Call
                   </Button>
@@ -210,7 +268,10 @@ Message: ${formData.message}`;
 
             {/* Map & Hours */}
             <div className="space-y-6">
-              <Card className="p-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+              <Card
+                className="p-8 animate-fade-up"
+                style={{ animationDelay: "0.1s" }}
+              >
                 <div className="flex items-center space-x-3 mb-4">
                   <Clock className="w-6 h-6 text-primary" />
                   <h3 className="text-xl font-bold">Business Hours</h3>
@@ -239,7 +300,10 @@ Message: ${formData.message}`;
               </Card>
 
               {/* Google Map */}
-              <Card className="overflow-hidden animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              <Card
+                className="overflow-hidden animate-fade-up"
+                style={{ animationDelay: "0.2s" }}
+              >
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105834.64018733838!2d18.424041995312503!3d-33.9248685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc500f8826eed7%3A0x687fe1fc2828aa87!2sCape%20Town%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
                   width="100%"

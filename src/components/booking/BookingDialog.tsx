@@ -1,11 +1,27 @@
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { useState } from "react";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
@@ -18,7 +34,11 @@ interface BookingDialogProps {
   defaultTour?: string;
 }
 
-const BookingDialog = ({ open, onOpenChange, defaultTour }: BookingDialogProps) => {
+const BookingDialog = ({
+  open,
+  onOpenChange,
+  defaultTour,
+}: BookingDialogProps) => {
   const [date, setDate] = useState<Date>();
   const [formData, setFormData] = useState({
     name: "",
@@ -28,31 +48,62 @@ const BookingDialog = ({ open, onOpenChange, defaultTour }: BookingDialogProps) 
     notes: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Create Email body
-    const subject = `Booking Request: ${formData.tourType}`;
-    const body = `Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Tour: ${formData.tourType}
-Date: ${date ? format(date, "PPP") : "Not specified"}
-Notes: ${formData.notes}`;
+    try {
+      const res = await fetch(
+        "https://backend-seven-eosin-31.vercel.app/api/sendMail",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            tourType: formData.tourType,
+            notes: formData.notes,
+            date: date ? format(date, "PPP") : null,
+          }),
+        }
+      );
 
-    // Open Email Client
-    window.location.href = `mailto:info@compasrose.travel?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const data = await res.json();
 
-    // Show success message
-    toast({
-      title: "Opening Email Client...",
-      description: "Please send the email to complete your request.",
-    });
+      if (res.ok && data.success) {
+        // Show success message
+        toast({
+          title: "Message Sent!!!",
+          description: "We'll get back to you as soon as possible.",
+          variant: "default",
+        });
 
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", tourType: "", notes: "" });
-    setDate(undefined);
-    onOpenChange(false);
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          tourType: "",
+          notes: "",
+        });
+        setDate(undefined);
+        onOpenChange(false);
+      } else {
+        console.log(
+          res.status,
+          " ",
+          data.error || "failed to send booking request"
+        );
+      }
+    } catch (err) {
+      toast({
+        title: "Error",
+        description: err.message || "Something went wrong.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -61,7 +112,8 @@ Notes: ${formData.notes}`;
         <DialogHeader>
           <DialogTitle className="text-2xl">Book Your Experience</DialogTitle>
           <DialogDescription>
-            Fill in your details and we'll get back to you shortly to confirm your booking
+            Fill in your details and we'll get back to you shortly to confirm
+            your booking
           </DialogDescription>
         </DialogHeader>
 
@@ -72,7 +124,9 @@ Notes: ${formData.notes}`;
               id="name"
               placeholder="John Smith"
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
               required
             />
           </div>
@@ -84,7 +138,9 @@ Notes: ${formData.notes}`;
               type="email"
               placeholder="john@example.com"
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               required
             />
           </div>
@@ -96,7 +152,9 @@ Notes: ${formData.notes}`;
               type="tel"
               placeholder="+27 123 456 789"
               value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, phone: e.target.value })
+              }
               required
             />
           </div>
@@ -105,7 +163,9 @@ Notes: ${formData.notes}`;
             <Label htmlFor="tour">Tour/Service Type *</Label>
             <Select
               value={formData.tourType}
-              onValueChange={(value) => setFormData({ ...formData, tourType: value })}
+              onValueChange={(value) =>
+                setFormData({ ...formData, tourType: value })
+              }
               required
             >
               <SelectTrigger>
@@ -114,8 +174,12 @@ Notes: ${formData.notes}`;
               <SelectContent>
                 <SelectItem value="cape-point">Cape Point Adventure</SelectItem>
                 <SelectItem value="winelands">Winelands Tour</SelectItem>
-                <SelectItem value="atlantis-dunes">Atlantis Dunes Safari</SelectItem>
-                <SelectItem value="airport-transfer">Airport Transfer</SelectItem>
+                <SelectItem value="atlantis-dunes">
+                  Atlantis Dunes Safari
+                </SelectItem>
+                <SelectItem value="airport-transfer">
+                  Airport Transfer
+                </SelectItem>
                 <SelectItem value="custom-tour">Custom Tour</SelectItem>
                 <SelectItem value="adventure-trip">Adventure Trip</SelectItem>
                 <SelectItem value="group-package">Group Package</SelectItem>
@@ -158,7 +222,9 @@ Notes: ${formData.notes}`;
               id="notes"
               placeholder="Any special requirements or questions?"
               value={formData.notes}
-              onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, notes: e.target.value })
+              }
               rows={3}
             />
           </div>

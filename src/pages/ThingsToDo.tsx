@@ -28,7 +28,8 @@ const ThingsToDo = () => {
     },
     {
       title: "Hiking Adventures",
-      description: "Conquer Table Mountain, Lion's Head, or Chapman's Peak. Experience breathtaking views and diverse trails for all fitness levels.",
+      description:
+        "Conquer Table Mountain, Lion's Head, or Chapman's Peak. Experience breathtaking views and diverse trails for all fitness levels.",
       image: hikingImage,
       duration: "2-8 hours",
       location: "Cape Peninsula",
@@ -65,7 +66,8 @@ const ThingsToDo = () => {
     },
     {
       title: "Cultural Experiences",
-      description: "Explore Township tours, Bo-Kaap heritage walks, Robben Island Museum, and local markets showcasing Cape Town's diverse culture.",
+      description:
+        "Explore Township tours, Bo-Kaap heritage walks, Robben Island Museum, and local markets showcasing Cape Town's diverse culture.",
       image: ghanaImage,
       duration: "2-6 hours",
       location: "City & townships",
@@ -108,8 +110,8 @@ const ThingsToDo = () => {
               Popular Activities
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Whether you seek adventure, relaxation, or cultural immersion, Cape
-              Town has something for everyone
+              Whether you seek adventure, relaxation, or cultural immersion,
+              Cape Town has something for everyone
             </p>
           </div>
 

@@ -10,12 +10,17 @@ import vaWaterfrontImage from "@/assets/print.jpg";
 import capePointImage from "@/assets/janan-OoW1DMDCV1Y-unsplash.jpg";
 import winelandsImage from "@/assets/pexels-pixabay-259447.jpg";
 import heroPlacesImage from "@/assets/places.jpg";
+import { useState } from "react";
+import BookingDialog from "@/components/booking/BookingDialog";
 
 const Places = () => {
+  const [showBooking, setShowBooking] = useState(false);
+
   const areas = [
     {
       title: "Camps Bay",
-      description: "One of Cape Town's most glamorous beach suburbs, featuring pristine white sand beaches backed by the spectacular Twelve Apostles mountain range.",
+      description:
+        "One of Cape Town's most glamorous beach suburbs, featuring pristine white sand beaches backed by the spectacular Twelve Apostles mountain range.",
       image: campsBayImage,
       highlights: [
         "Stunning beach promenade",
@@ -26,7 +31,8 @@ const Places = () => {
     },
     {
       title: "Bo-Kaap",
-      description: "The colorful heart of Cape Town's Cape Malay community, known for its brightly painted houses, cobblestone streets, and rich cultural heritage.",
+      description:
+        "The colorful heart of Cape Town's Cape Malay community, known for its brightly painted houses, cobblestone streets, and rich cultural heritage.",
       image: boKaapImage,
       highlights: [
         "Instagram-worthy colorful houses",
@@ -37,7 +43,8 @@ const Places = () => {
     },
     {
       title: "Franschhoek",
-      description: "Cape Town's premier shopping and entertainment destination, combining historic harbor atmosphere with modern amenities and attractions.",
+      description:
+        "Cape Town's premier shopping and entertainment destination, combining historic harbor atmosphere with modern amenities and attractions.",
       image: vaWaterfrontImage,
       highlights: [
         "Over 450 retail outlets",
@@ -48,7 +55,8 @@ const Places = () => {
     },
     {
       title: "Cape Point",
-      description: "Where two oceans meet at the dramatic southwestern tip of Africa, offering breathtaking coastal scenery and abundant wildlife.",
+      description:
+        "Where two oceans meet at the dramatic southwestern tip of Africa, offering breathtaking coastal scenery and abundant wildlife.",
       image: capePointImage,
       highlights: [
         "Iconic lighthouse views",
@@ -59,29 +67,26 @@ const Places = () => {
     },
     {
       title: "Table-Mountain",
-      description: "An iconic landmark overlooking Cape Town, featuring dramatic cliffs, scenic hiking trails, and panoramic views of the city and coastline.",
+      description:
+        "An iconic landmark overlooking Cape Town, featuring dramatic cliffs, scenic hiking trails, and panoramic views of the city and coastline.",
       image: winelandsImage,
       highlights: [
         "Cable car rides to the summit",
-  "Panoramic views of Cape Town and the coastline",
-  "Hiking trails for all levels of experience",
-  "Rich biodiversity and unique fynbos vegetation",
+        "Panoramic views of Cape Town and the coastline",
+        "Hiking trails for all levels of experience",
+        "Rich biodiversity and unique fynbos vegetation",
       ],
     },
   ];
 
   const handleBookNow = (placeName: string) => {
-    const message = `Hi! I'd like to learn more about visiting ${placeName}. Can you provide information about tours?`;
-    window.open(
-      `https://wa.me/27781275522?text=${encodeURIComponent(message)}`,
-      "_blank"
-    );
+    setShowBooking(true);
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <Hero
         title="Explore Cape Town"
         subtitle="Discover Amazing Places"
@@ -94,9 +99,12 @@ const Places = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Popular Destinations</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Popular Destinations
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Each area of Cape Town has its own unique character and attractions
+              Each area of Cape Town has its own unique character and
+              attractions
             </p>
           </div>
 
@@ -109,9 +117,11 @@ const Places = () => {
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${
-                  index % 2 === 0 ? "" : "lg:grid-flow-dense"
-                }`}>
+                <div
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${
+                    index % 2 === 0 ? "" : "lg:grid-flow-dense"
+                  }`}
+                >
                   {/* Image */}
                   <div
                     className={`relative h-80 lg:h-auto overflow-hidden ${
@@ -133,7 +143,9 @@ const Places = () => {
                     </p>
 
                     <div className="mb-8">
-                      <h4 className="font-semibold mb-3 text-primary">Highlights:</h4>
+                      <h4 className="font-semibold mb-3 text-primary">
+                        Highlights:
+                      </h4>
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {area.highlights.map((highlight) => (
                           <li
@@ -151,10 +163,13 @@ const Places = () => {
                       <Button onClick={() => handleBookNow(area.title)}>
                         Book a Tour
                       </Button>
-                      <Link to={`/places/${area.title.toLowerCase().replace(/\s+/g, '-').replace('&', 'and')}`}>
-                        <Button variant="outline">
-                          Learn More
-                        </Button>
+                      <Link
+                        to={`/places/${area.title
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")
+                          .replace("&", "and")}`}
+                      >
+                        <Button variant="outline">Learn More</Button>
                       </Link>
                     </div>
                   </div>
@@ -171,8 +186,12 @@ const Places = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-up">
             Ready to Explore These Amazing Places?
           </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Let us create a custom itinerary that takes you to all the must-see destinations in Cape Town
+          <p
+            className="text-lg mb-8 max-w-2xl mx-auto opacity-90 animate-fade-up"
+            style={{ animationDelay: "0.1s" }}
+          >
+            Let us create a custom itinerary that takes you to all the must-see
+            destinations in Cape Town
           </p>
           <Button
             variant="hero"
@@ -183,6 +202,8 @@ const Places = () => {
           >
             Plan Your Trip
           </Button>
+
+          <BookingDialog open={showBooking} onOpenChange={setShowBooking} />
         </div>
       </section>
 

@@ -18,35 +18,35 @@ const AdventureTrips = () => {
       title: "Sandboarding",
       description: "Ride down massive dunes at Atlantis",
       duration: "Half day",
-      price: "From R800"
+      price: "From R800",
     },
     {
       icon: <Wind className="w-8 h-8" />,
       title: "Paragliding",
       description: "Tandem flights from Signal Hill",
       duration: "2-3 hours",
-      price: "From R1,200"
+      price: "From R1,200",
     },
     {
       icon: <Waves className="w-8 h-8" />,
       title: "Shark Cage Diving",
       description: "Face-to-face with great whites",
       duration: "Full day",
-      price: "From R2,500"
+      price: "From R2,500",
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: "Abseiling",
       description: "Rappel down Table Mountain",
       duration: "Half day",
-      price: "From R950"
+      price: "From R950",
     },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <Hero
         title="Adventure Trips"
         subtitle="Adrenaline & Thrills"
@@ -65,33 +65,41 @@ const AdventureTrips = () => {
           </Link>
 
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-6">Unleash Your Inner Adventurer</h2>
+            <h2 className="text-3xl font-bold mb-6">
+              Unleash Your Inner Adventurer
+            </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Cape Town is an adventure playground for thrill-seekers. From sandboarding down towering dunes to 
-              coming face-to-face with great white sharks, we offer experiences that will get your heart racing 
+              Cape Town is an adventure playground for thrill-seekers. From
+              sandboarding down towering dunes to coming face-to-face with great
+              white sharks, we offer experiences that will get your heart racing
               and create memories that last a lifetime.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {adventures.map((adventure, index) => (
-              <Card 
-                key={adventure.title} 
+              <Card
+                key={adventure.title}
                 className="p-8 hover:shadow-2xl transition-all animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="text-primary">{adventure.icon}</div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-2">{adventure.title}</h3>
-                    <p className="text-muted-foreground mb-4">{adventure.description}</p>
+                    <h3 className="text-2xl font-bold mb-2">
+                      {adventure.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      {adventure.description}
+                    </p>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">{adventure.duration}</span>
-                      
+                      <span className="text-sm text-muted-foreground">
+                        {adventure.duration}
+                      </span>
                     </div>
                   </div>
                 </div>
-                <Button 
+                <Button
                   onClick={() => setShowBooking(true)}
                   className="w-full mt-4"
                   variant="outline"
@@ -121,15 +129,26 @@ const AdventureTrips = () => {
 
           <div className="text-center mt-12">
             <h3 className="text-2xl font-bold mb-4">Ready for an Adventure?</h3>
-            <p className="text-muted-foreground mb-6">All safety equipment provided • Professional instructors • Small groups</p>
+            <p className="text-muted-foreground mb-6">
+              All safety equipment provided • Professional instructors • Small
+              groups
+            </p>
             <div className="flex gap-4 justify-center">
               <Button onClick={() => setShowBooking(true)} size="lg">
                 Book Now
               </Button>
-              <Button 
-                variant="whatsapp" 
+              <Button
+                variant="whatsapp"
                 size="lg"
-                onClick={() => window.open("https://wa.me/27781275522?text=" + encodeURIComponent("I'm interested in adventure activities"), "_blank")}
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/27781275522?text=" +
+                      encodeURIComponent(
+                        "I'm interested in adventure activities"
+                      ),
+                    "_blank"
+                  )
+                }
               >
                 WhatsApp Us
               </Button>
@@ -138,7 +157,11 @@ const AdventureTrips = () => {
         </div>
       </section>
 
-      <BookingDialog open={showBooking} onOpenChange={setShowBooking} defaultTour="adventure-trip" />
+      <BookingDialog
+        open={showBooking}
+        onOpenChange={setShowBooking}
+        defaultTour="adventure-trip"
+      />
       <Footer />
     </div>
   );
