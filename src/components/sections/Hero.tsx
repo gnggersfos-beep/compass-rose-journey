@@ -6,6 +6,7 @@ import BookingDialog from "@/components/booking/BookingDialog"; // ✅ ensure th
 
 interface HeroProps {
   title: string;
+  onClick?: () => void;
   subtitle?: string;
   description?: string;
   backgroundImage: string;
@@ -83,7 +84,7 @@ const Hero = ({
           <Button
             variant="hero"
             size="lg"
-            onClick={() => setShowBooking(true)}
+            onClick={primaryButtonAction || (() => setShowBooking(true))}
           >
             {primaryButtonText}
           </Button>

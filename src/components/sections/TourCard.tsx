@@ -2,6 +2,8 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, MapPin, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import BookingDialog from "../booking/BookingDialog";
 
 interface TourCardProps {
   title: string;
@@ -24,12 +26,18 @@ const TourCard = ({
   price,
   link,
 }: TourCardProps) => {
+  const [showBooking, setShowBooking] = useState(false);
+
   const handleWhatsApp = () => {
     const message = `Hi! I'm interested in the ${title} tour. Can you provide more information?`;
     window.open(
       `https://wa.me/27781275522?text=${encodeURIComponent(message)}`,
       "_blank"
     );
+  };
+
+  const handleBookNow = () => {
+    setShowBooking(true);
   };
 
   return (
@@ -83,7 +91,7 @@ const TourCard = ({
             <Link to={link}>Learn More</Link>
           </Button>
         ) : (
-          <Button variant="default" className="flex-1" onClick={handleWhatsApp}>
+          <Button variant="default" className="flex-1" onClick={handleBookNow}>
             Book Now
           </Button>
         )}
@@ -91,6 +99,13 @@ const TourCard = ({
           Contact
         </Button>
       </CardFooter>
+
+      {/* Booking Dialog */}
+      <BookingDialog
+        open={showBooking}
+        onOpenChange={setShowBooking}
+        defaultTour={title}
+      />
     </Card>
   );
 };
