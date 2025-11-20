@@ -6,8 +6,12 @@ import GlassCard from "@/components/ui/GlassCard";
 import { Heart, Users, Award, Leaf } from "lucide-react";
 import heroAboutImage from "@/assets/abouts.jpg";
 import founderImage from "@/assets/THAMANI ASHMA PRESENTS.png";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+ 
+  const navigate = useNavigate()
+
   const values = [
     {
       icon: <Heart className="w-12 h-12 text-primary" />,
@@ -43,6 +47,7 @@ const About = () => {
         height="medium"
         showSecondaryButton={false}
         primaryButtonText="Contact Us"
+       primaryButtonAction={() => navigate("/contact")}
       />
 
       {/* Founder Section */}
