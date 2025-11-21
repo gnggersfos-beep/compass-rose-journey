@@ -120,7 +120,7 @@ const Contact = () => {
                     href="tel:+27781275522"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    +27 62 580 3352
+                    +27 78 127 5522
                   </a>
                 </div>
               </div>
@@ -137,10 +137,10 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold mb-2">Email</h3>
                   <a
-                    href="mailto:info@compassrosetravel.co.za"
+                    href="mailto:info@compasrose.travel"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    info@compassrosetravel.co.za
+                    info@compasrose.travel
                   </a>
                 </div>
               </div>

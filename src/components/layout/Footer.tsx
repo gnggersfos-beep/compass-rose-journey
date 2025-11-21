@@ -120,13 +120,13 @@ const Footer = () => {
               <li className="flex items-center space-x-2 text-sm opacity-90">
                 <Phone className="w-4 h-4 flex-shrink-0" />
                 <a href="tel:+27781275522" className="hover:opacity-100">
-                  +27 62 580 3352
+                  +27 78 127 5522
                 </a>
               </li>
               <li className="flex items-center space-x-2 text-sm opacity-90">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <a href="mailto:info@compassrosetravel.co.za" className="hover:opacity-100">
-                  info@compassrosetravel.co.za
+                <a href="mailto:info@compasrose.travel" className="hover:opacity-100">
+                  info@compasrose.travel
                 </a>
               </li>
             </ul>
